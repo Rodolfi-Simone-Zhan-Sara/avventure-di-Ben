@@ -2,4 +2,5 @@ import pygame
 
 pygame.init()
 
-pygame.display.flip
+SCREEN_W = 900
+SCREEN_H = 700
