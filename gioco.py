@@ -12,6 +12,6 @@ BEN1_THRUST = 3
 BEN1_SPEED = 4
 GRAVITY = 0.1
 
-LEANDRO_IMAGE = pygame.image.load("img/Leandro.png")
+LEANDRO_IMAGE = pygame.image.load("img/leandro.png")
 LEANDRO_SIZE = LEANDRO_IMAGE.get_size()
 LEANDRO_POSITION = (SCREEN_W / 2 - LEANDRO_SIZE[0] / 2, SCREEN_H / 2 - LEANDRO_SIZE[1] / 2 - 50)
