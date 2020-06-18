@@ -1,2 +1,0 @@
-ciao
-come ti permetti
