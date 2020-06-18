@@ -19,3 +19,9 @@ LEANDRO_POSITION = (SCREEN_W / 2 - LEANDRO_SIZE[0] / 2, SCREEN_H / 2 - LEANDRO_S
 LAPIDE_IMAGE = pygame.image.load("img/lapide.jpg")
 LAPIDE_SIZE = LAPIDE_IMAGE.get_size()
 LAPIDE_POSITION = (SCREEN_W / 2 - LAPIDE_SIZE[0] / 2, SCREEN_H / 2 - LAPIDE_SIZE[1] / 2 + 50)
+
+FURIE1_IMAGE = pygame.image.load("img/furie1.png")
+FURIE2_IMAGE = pygame.image.load("img/furie2.png")
+BEN_FURIE1_IMAGE = pygame.image.load("img/ben-furie1.png")
+BEN_FURIE2_IMAGE = pygame.image.load("img/ben-furie2.png")
+SUSI = pygame.transform.flip(pygame.image.load("img/furie1.png") True, False)
