@@ -15,3 +15,7 @@ GRAVITY = 0.1
 LEANDRO_IMAGE = pygame.image.load("img/leandro.png")
 LEANDRO_SIZE = LEANDRO_IMAGE.get_size()
 LEANDRO_POSITION = (SCREEN_W / 2 - LEANDRO_SIZE[0] / 2, SCREEN_H / 2 - LEANDRO_SIZE[1] / 2 - 50)
+
+LAPIDE_IMAGE = pygame.image.load("img/lapide.jpg")
+LAPIDE_SIZE = LAPIDE_IMAGE.get_size()
+LAPIDE_POSITION = (SCREEN_W / 2 - LAPIDE_SIZE[0] / 2, 550)
