@@ -22,6 +22,71 @@ LAPIDE_POSITION = (SCREEN_W / 2 - LAPIDE_SIZE[0] / 2, SCREEN_H / 2 - LAPIDE_SIZE
 
 FURIE1_IMAGE = pygame.image.load("img/furie1.png")
 FURIE2_IMAGE = pygame.image.load("img/furie2.png")
+
 BEN_FURIE1_IMAGE = pygame.image.load("img/ben-furie1.png")
 BEN_FURIE2_IMAGE = pygame.image.load("img/ben-furie2.png")
-SUSI = pygame.transform.flip(pygame.image.load("img/furie1.png"), True, False)
+
+SUSI = pygame.transform.flip(pygame.image.load("img/furie1.png"), True , False)
+
+
+DEBUG = False
+
+
+class Entity:
+    def __init__(self, x, y, image, hitbox_relative_size=0):
+        self.image = image
+        self.size = image.get_size()
+        self.hitbox_relative_size = hitbox_relative_size
+
+        self.x = x
+        self.y = y
+        self.w = self.size[0]
+        self.h = self.size[1]
+
+        self.hitbox_x = self.x + hitbox_relative_size
+        self.hitbox_y = self.y + hitbox_relative_size
+        self.hitbox_w = self.w - hitbox_relative_size * 2
+        self.hitbox_h = self.h - hitbox_relative_size * 2
+
+    def draw(self, surface):
+        surface.blit(self.image, (self.x, self.y))
+        if DEBUG:
+            pygame.draw.rect(surface, (255, 0, 0), (self.hitbox_x, self.hitbox_y, self.hitbox_w, self.hitbox_h))
+
+    def update(self):
+        self.hitbox_x = self.x + self.hitbox_relative_size
+        self.hitbox_y = self.y + self.hitbox_relative_size
+    
+    def is_colliding(self, colliding_entity):
+        return self.hitbox_x + self.hitbox_w >= colliding_entity.hitbox_x and \
+            self.hitbox_x <= colliding_entity.hitbox_x + colliding_entity.hitbox_w and \
+            self.hitbox_y + self.hitbox_h >= colliding_entity.hitbox_y and \
+            self.hitbox_y <= colliding_entity.hitbox_y + colliding_entity.hitbox_h
+
+
+class Ben(Entity):
+    def __init__(self):
+        super().__init__(BEN1_STARTING_POSITION[0], BEN1_STARTING_POSITION[1], BEN1_IMAGE, +5)
+        self.fall_speed = 0
+        self.alive = True
+
+    def update(self):
+        self.fall_speed += GRAVITY
+        self.y += self.fall_speed
+        super().update()
+
+    def fly(self):
+        self.fall_speed = - BEN1_THRUST
+
+    def reset(self):
+        self.alive = True
+        self.fall_speed = 0
+        self.y = BEN1_STARTING_POSITION[1]
+
+#metti blocchi e la loro classe!!!!
+
+
+screen = pygame.display.set_mode((SCREEN_W, SCREEN_H))
+pygame.display.set_caption("L'avventura di Ben")
+clock = pygame.time.Clock()
+running = True
