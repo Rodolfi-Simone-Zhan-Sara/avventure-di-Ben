@@ -26,7 +26,7 @@ FURIE2_IMAGE = pygame.image.load("img/furie2.png")
 BEN_FURIE1_IMAGE = pygame.image.load("img/ben-furie1.png")
 BEN_FURIE2_IMAGE = pygame.image.load("img/ben-furie2.png")
 
-SUSI = pygame.transform.flip(pygame.image.load("img/furie1.png"), True , False)
+SUSI_IMAGE = pygame.transform.flip(pygame.image.load("img/furie1.png"), True , False)
 
 
 DEBUG = False
@@ -82,11 +82,15 @@ class Ben(Entity):
         self.alive = True
         self.fall_speed = 0
         self.y = BEN1_STARTING_POSITION[1]
+        
+        
+ 
+BLOCK = pygame.draw.rect (surface, color, rect) 
+
+BLOCK_STARTING_POSITION = ()
+BLOCK_SIZE = ()
+
+    
 
 #metti blocchi e la loro classe!!!!
 
-
-screen = pygame.display.set_mode((SCREEN_W, SCREEN_H))
-pygame.display.set_caption("L'avventura di Ben")
-clock = pygame.time.Clock()
-running = True
