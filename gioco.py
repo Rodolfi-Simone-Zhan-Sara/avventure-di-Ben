@@ -29,10 +29,13 @@ BEN_FURIE2_IMAGE = pygame.image.load("img/ben-furie2.png")
 SUSI_IMAGE = pygame.transform.flip(pygame.image.load("img/furie1.png"), True , False)
 
 
-LAVA = pygame.line (SCREEN, RED (255, 0, 0), (0, SCREEN_H), (SCREEN_W, SCREEN_H), 3)
-BASE = pygame.rect (SCREEN, BLACK (0, 0, 0), 180, 110) 
-PORTA = pygame.rect (SCREEN, BLACK (0, 0, 0), 10, 190) 
-BLOCCO_SALTO = pygame.rect (SCREEN, BLACK (0, 0, 0), 163, 80) 
+screen = pygame.display.set_mode((SCREEN_W, SCREEN_H))
+
+
+LAVA = pygame.line (screen, (255, 0, 0), (0, SCREEN_H), (SCREEN_W, SCREEN_H), 3)
+BASE = pygame.Rect (screen, (0, 0, 0), 180, 110) 
+PORTA = pygame.Rect (screen, (0, 0, 0), 10, 190) 
+BLOCCO_SALTO = pygame.Rect (screen, (0, 0, 0), 163, 80) 
 
 
 DEBUG = False
@@ -88,4 +91,3 @@ class Ben(Entity):
         self.alive = True
         self.fall_speed = 0
         self.y = BEN1_STARTING_POSITION[1]
-
