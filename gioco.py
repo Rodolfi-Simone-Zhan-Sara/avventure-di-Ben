@@ -81,7 +81,7 @@ class Ben(Entity):
         self.y += self.fall_speed
         super().update()
 
-    def fly(self):
+    def jump(self):
         self.fall_speed = - BEN1_THRUST
 
     def reset(self):
@@ -89,6 +89,3 @@ class Ben(Entity):
         self.fall_speed = 0
         self.y = BEN1_STARTING_POSITION[1]
 
-
-class Block(Entity):
-    
