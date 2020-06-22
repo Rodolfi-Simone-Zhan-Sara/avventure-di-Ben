@@ -93,3 +93,21 @@ class Ben(Entity):
         self.alive = True
         self.fall_speed = 0
         self.y = BEN1_STARTING_POSITION[1]
+    
+
+pygame.display.set_caption("Le avventure di Ben")
+clock = pygame.time.Clock()
+background_colour = (WHITE)
+running = True
+
+
+BEN1 = Ben()
+LAVA = Entity()
+BASE = Entity()
+PORTA =Entity()
+BLOCCO_SALTO = Entity()
+
+entities = (BEN1, LAVA, BASE, Porta, BLOCCO_SALTO)
+
+while running:
+    
