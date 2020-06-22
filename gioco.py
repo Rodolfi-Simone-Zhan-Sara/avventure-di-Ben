@@ -28,7 +28,6 @@ BEN_FURIE2_IMAGE = pygame.image.load("img/ben-furie2.png")
 
 SUSI_IMAGE = pygame.transform.flip(pygame.image.load("img/furie1.png"), True , False)
 
-
 BLOCK1 = pygame.draw.rect (surface, color, rect) 
 BLOCK2 = pygame.draw.rect (surface, color, rect) 
 BLOCK3 = pygame.draw.rect (surface, color, rect) 
