@@ -28,11 +28,11 @@ BEN_FURIE2_IMAGE = pygame.image.load("img/ben-furie2.png")
 
 SUSI_IMAGE = pygame.transform.flip(pygame.image.load("img/furie1.png"), True , False)
 
-BLOCK1 = pygame.draw.rect (surface, color, rect) 
-BLOCK2 = pygame.draw.rect (surface, color, rect) 
-BLOCK3 = pygame.draw.rect (surface, color, rect) 
-BLOCK4 = pygame.draw.rect (surface, color, rect) 
-BLOCK5 = pygame.draw.rect (surface, color, rect) 
+
+LAVA = pygame.line (SCREEN, RED (255, 0, 0), (0, SCREEN_H), (SCREEN_W, SCREEN_H), 3)
+BASE = pygame.rect (SCREEN, BLACK (0, 0, 0), 180, 110) 
+PORTA = pygame.rect (SCREEN, BLACK (0, 0, 0), 10, 190) 
+BLOCCO_SALTO = pygame.rect (SCREEN, BLACK (0, 0, 0), 163, 80) 
 
 
 DEBUG = False
