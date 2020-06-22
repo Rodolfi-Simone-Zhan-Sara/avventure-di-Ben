@@ -2,7 +2,7 @@ import pygame
 
 pygame.init()
 
-SCREEN_W = 900
+SCREEN_W = 902
 SCREEN_H = 700
 
 BEN1_IMAGE = pygame.image.load("img/ben1.png")
@@ -31,11 +31,13 @@ SUSI_IMAGE = pygame.transform.flip(pygame.image.load("img/furie1.png"), True , F
 
 screen = pygame.display.set_mode((SCREEN_W, SCREEN_H))
 
+BLACK = (0,0,0)
+WHITE = (255,255,255)
 
-LAVA = pygame.line (screen, (255, 0, 0), (0, SCREEN_H), (SCREEN_W, SCREEN_H), 3)
-BASE = pygame.Rect (screen, (0, 0, 0), 180, 110) 
-PORTA = pygame.Rect (screen, (0, 0, 0), 10, 190) 
-BLOCCO_SALTO = pygame.Rect (screen, (0, 0, 0), 163, 80) 
+LAVA = pygame.Rect (screen, WHITE, SCREEN_W, 5)
+BASE = pygame.Rect (screen, BLACK, 180, 110) 
+PORTA = pygame.Rect (screen, BLACK, 10, 190) 
+BLOCCO_SALTO = pygame.Rect (screen, BLACK, 163, 80) 
 
 
 DEBUG = False
