@@ -29,6 +29,13 @@ BEN_FURIE2_IMAGE = pygame.image.load("img/ben-furie2.png")
 SUSI_IMAGE = pygame.transform.flip(pygame.image.load("img/furie1.png"), True , False)
 
 
+BLOCK1 = pygame.draw.rect (surface, color, rect) 
+BLOCK2 = pygame.draw.rect (surface, color, rect) 
+BLOCK3 = pygame.draw.rect (surface, color, rect) 
+BLOCK4 = pygame.draw.rect (surface, color, rect) 
+BLOCK5 = pygame.draw.rect (surface, color, rect) 
+
+
 DEBUG = False
 
 
@@ -82,15 +89,7 @@ class Ben(Entity):
         self.alive = True
         self.fall_speed = 0
         self.y = BEN1_STARTING_POSITION[1]
-        
-        
- 
-BLOCK = pygame.draw.rect (surface, color, rect) 
 
-BLOCK_STARTING_POSITION = ()
-BLOCK_SIZE = ()
 
+class Block(Entity):
     
-
-#metti blocchi e la loro classe!!!!
-
