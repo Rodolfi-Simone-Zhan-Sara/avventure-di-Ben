@@ -107,7 +107,7 @@ BASE = Entity()
 PORTA =Entity()
 BLOCCO_SALTO = Entity()
 
-entities = (BEN1, LAVA, BASE, Porta, BLOCCO_SALTO)
+entities = (BEN1, LAVA, BASE, PORTA, BLOCCO_SALTO)
 
 while running:
     
