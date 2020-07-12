@@ -102,10 +102,10 @@ running = True
 
 
 BEN1 = Ben()
-LAVA = Entity()
-BASE = Entity()
-PORTA =Entity()
-BLOCCO_SALTO = Entity()
+LAVA = Entity
+BASE = Entity
+PORTA = Entity
+BLOCCO_SALTO = Entity
 
 entities = (BEN1, LAVA, BASE, PORTA, BLOCCO_SALTO)
 
