@@ -8,7 +8,7 @@ BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 Ben = pygame.image.load("img/ben2.png")
 BEN = pygame.transform.scale(Ben,(52, 55))
-todraw = pygame.sprite.Group()
+draw = pygame.sprite.Group()
 plats = pygame.sprite.Group()
 
 class Platform(pygame.sprite.Sprite):
@@ -45,7 +45,7 @@ class Player(pygame.sprite.Sprite):
         self.rect=self.image.get_rect()
         self.rect.x = 120
         self.rect.y = 650
-        todraw.add(self)
+        draw.add(self)
     def update(self):
         self.rect.x += self.move_x
         xcoll()
@@ -54,16 +54,16 @@ class Player(pygame.sprite.Sprite):
         screen.blit(self.image, (self.rect.x, self.rect.y))
 
 def xcoll():
-    collision = pygame.sprite.spritecollide(player, plats, False)
-    for block in collision:
+    collisione = pygame.sprite.spritecollide(player, plats, False)
+    for block in collisione:
         if player.move_x > 0:
             player.rect.right = block.rect.left
         if player.move_x < 0:
             player.rect.left = block.rect.right
 def ycoll():
-        collision = pygame.sprite.spritecollide(player, plats, False)
+        collisione = pygame.sprite.spritecollide(player, plats, False)
         player.onground = False
-        for block in collision:
+        for block in collisione:
             if player.move_y == 0:
                 player.onground = True
             if player.move_y < 0:
@@ -162,7 +162,7 @@ while True:
 
     screen.blit(testo,(100, 50))
     screen.blit(testo1,(860, 286))
-    todraw.update()
+    draw.update()
     plats.update()
     pygame.display.update()
     pygame.display.set_caption("Le avventure di Ben: livello")
