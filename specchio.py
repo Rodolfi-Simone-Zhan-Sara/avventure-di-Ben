@@ -11,7 +11,7 @@ WHITE = (255, 255, 255)
 VETRO = (100, 149, 210)
 Ben = pygame.image.load("img/ben2.png")
 BEN = pygame.transform.scale(Ben,(50, 55))
-todraw = pygame.sprite.Group()
+draw = pygame.sprite.Group()
 plats = pygame.sprite.Group()
 
 class Platform(pygame.sprite.Sprite):
@@ -72,7 +72,7 @@ class Player(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.x = 600
         self.rect.y = 650
-        todraw.add(self)
+        draw.add(self)
     def update(self):
         self.rect.x += self.move_x
         xcoll()
@@ -192,7 +192,7 @@ while True:
 
     screen.blit(testo,(230, 50))
     screen.blit(testo1,(7, 250))
-    todraw.update()
+    draw.update()
     plats.update()
     pygame.display.update()
     pygame.display.set_caption("Le avventure di Ben: livello")
