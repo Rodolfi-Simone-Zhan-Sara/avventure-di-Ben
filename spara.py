@@ -4,7 +4,6 @@ import random
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 
- 
 class Block(pygame.sprite.Sprite):
     def __init__(self, color):
         super().__init__()
@@ -12,7 +11,6 @@ class Block(pygame.sprite.Sprite):
         self.image = pygame.Surface([30, 20])
         self.image.fill(color)
         self.rect = self.image.get_rect()
- 
  
 class Player(pygame.sprite.Sprite):
     def __init__(self):
@@ -26,14 +24,12 @@ class Player(pygame.sprite.Sprite):
         pos = pygame.mouse.get_pos()
         self.rect.x = pos[0]
  
- 
 class Bullet(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
  
         self.image = pygame.Surface([5, 10])
         self.image.fill(BLACK)
- 
         self.rect = self.image.get_rect()
  
     def update(self):
@@ -60,7 +56,7 @@ player = Player()
 all_sprites_list.add(player)
 sparo = pygame.mixer.Sound("img/sparo.wav")
 font = pygame.font.SysFont("brittanic", 25)
-scritta = font.render("TOCCA I BLOCCHI, RIESCI AD ARRIVARE A 50 ?", True, BLACK)
+scritta = font.render("TOCCA I BLOCCHI, RIESCI AD ARRIVARE A 50 ? IL TUO PUNTEGGIO SI TROVA SUL TERMINALE ", True, BLACK)
 
 done = False
 
@@ -102,7 +98,7 @@ while not done:
 
     screen.fill(WHITE)
     all_sprites_list.draw(screen)
-    screen.blit(scritta,(100, 20))
+    screen.blit(scritta,(50, 20))
     pygame.display.flip()
     pygame.display.set_caption("Le avventure di Ben: livello")
     clock.tick(60)     
