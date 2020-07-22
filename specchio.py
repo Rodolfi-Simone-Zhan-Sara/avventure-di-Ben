@@ -81,16 +81,16 @@ class Player(pygame.sprite.Sprite):
         screen.blit(self.image, (self.rect.x, self.rect.y))
 
 def xcoll():
-    collision = pygame.sprite.spritecollide(player, plats, False)
-    for block in collision:
+    collisione = pygame.sprite.spritecollide(player, plats, False)
+    for block in collisione:
         if player.move_x > 0:
             player.rect.right = block.rect.left
         if player.move_x < 0:
             player.rect.left = block.rect.right
 def ycoll():
-        collision = pygame.sprite.spritecollide(player, plats, False)
+        collisione = pygame.sprite.spritecollide(player, plats, False)
         player.onground = False
-        for block in collision:
+        for block in collisione:
             if player.move_y == 0:
                 player.onground = True
             if player.move_y < 0:
