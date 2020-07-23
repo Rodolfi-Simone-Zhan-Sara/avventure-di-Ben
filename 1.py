@@ -1,5 +1,6 @@
 import pygame
 from pygame.locals import *
+
 pygame.init()
 
 screen = pygame.display.set_mode((900,700), 0, 32)
@@ -8,7 +9,7 @@ BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 Ben = pygame.image.load("img/ben2.png")
 BEN = pygame.transform.scale(Ben,(52, 55))
-todraw = pygame.sprite.Group()
+draw = pygame.sprite.Group()
 plats = pygame.sprite.Group()
 
 class Platform(pygame.sprite.Sprite):
@@ -46,7 +47,7 @@ class Player(pygame.sprite.Sprite):
         self.rect=self.image.get_rect()
         self.rect.x = 120
         self.rect.y = 650
-        todraw.add(self)
+        draw.add(self)
     def update(self):
         self.rect.x += self.move_x
         xcoll()
@@ -166,10 +167,11 @@ while True:
             if event.key == K_RIGHT:
                 player.move_x = 0
 
-    todraw.update()
+    draw.update()
     plats.update() 
     screen.blit(testo,(100, 50))
     screen.blit(testo1,(6, 286))
     pygame.display.update()
     pygame.display.set_caption("Le avventure di Ben: livello 1")
     clock.tick(60)
+
