@@ -35,6 +35,7 @@ class Bullet(pygame.sprite.Sprite):
     def update(self):
         self.rect.y -= 8
 
+
 pygame.init()
 pygame.mixer.init()
 
