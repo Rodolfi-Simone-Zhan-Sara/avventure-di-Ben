@@ -59,7 +59,6 @@ while True:
     if v == 500:
         velocita +=1
         v= 0
-    print(s)
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:  
@@ -93,7 +92,6 @@ while True:
             all_sprites_list.remove(morte_list)
             salto = -7 
             velocita = 2
-            s = 0
             v = 0
         if blocco.rect.x < 50:
             all_sprites_list.remove(blocco)		
@@ -104,3 +102,4 @@ while True:
     pygame.display.flip()
     pygame.display.set_caption("Le avventure di Ben: livello 6")
     clock.tick(60)
+
