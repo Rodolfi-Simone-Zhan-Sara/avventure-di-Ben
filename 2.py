@@ -1,5 +1,4 @@
 import pygame
-from pygame.locals import *
 
 pygame.init()
 
@@ -159,8 +158,7 @@ def build():
 def gravity():
     if not player.onground:
         player.move_y += 0.8
-
-        
+      
 player = Player()
 build()
 
@@ -176,19 +174,19 @@ while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:  
             exit()
-        if event.type == KEYDOWN:
-            if event.key == K_UP:   
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_UP:   
                 if player.onground:   
-                    player.move_y = -10
+                    player.move_y =- 10
                     player.onground = False
-            if event.key == K_LEFT: 
-                player.move_x =- 6
-            if event.key == K_RIGHT:  
+            if event.key == pygame.K_LEFT: 
+                player.move_x = -6
+            if event.key == pygame.K_RIGHT:  
                 player.move_x = 6
-        if event.type == KEYUP:  
-            if event.key == K_LEFT:
+        if event.type == pygame.KEYUP:  
+            if event.key == pygame.K_LEFT:
                 player.move_x = 0
-            if event.key == K_RIGHT:
+            if event.key == pygame.K_RIGHT:
                 player.move_x = 0
 
     screen.blit(testo,(230, 50))
