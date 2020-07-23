@@ -77,7 +77,7 @@ while True:
                 player.move_y = 0
     all_sprites_list.update()
     
-    n = random.randrange(20)
+    n = random.randrange(15)
 
     if n == 1:
         morte = Block(BLACK)
