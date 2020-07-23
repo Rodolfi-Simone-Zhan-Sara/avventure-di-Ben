@@ -1,5 +1,6 @@
 import pygame
 from pygame.locals import *
+
 pygame.init()
 
 screen = pygame.display.set_mode((900,700), 0, 32)
@@ -54,25 +55,25 @@ class Player(pygame.sprite.Sprite):
         screen.blit(self.image, (self.rect.x, self.rect.y))
 
 def xcoll():
-    collisione = pygame.sprite.spritecollide(player, plats, False)
-    for block in collisione:
+    collision = pygame.sprite.spritecollide(player, plats, False)
+    for block in collision:
         if player.move_x > 0:
             player.rect.right = block.rect.left
         if player.move_x < 0:
             player.rect.left = block.rect.right
 def ycoll():
-        collisione = pygame.sprite.spritecollide(player, plats, False)
-        player.onground = False
-        for block in collisione:
-            if player.move_y == 0:
-                player.onground = True
-            if player.move_y < 0:
-                player.rect.top = block.rect.bottom
-                player.move_y = 0     
-                player.onground = False
-            if player.move_y > 0:
-                player.rect.bottom = block.rect.top
-                player.onground = True
+    collision = pygame.sprite.spritecollide(player, plats, False)
+    player.onground = False
+    for block in collision:
+        if player.move_y == 0:
+            player.onground = True
+        if player.move_y < 0:
+            player.rect.top = block.rect.bottom
+            player.move_y = 0     
+            player.onground = False
+        if player.move_y > 0:
+            player.rect.bottom = block.rect.top
+            player.onground = True
 
 def build():
     myx = 0
@@ -126,9 +127,12 @@ def build():
         myy += 20
         myx = 0
 
+
 def gravity():
     if not player.onground:
         player.move_y += 1
+
+
 player = Player()
 build()
 
@@ -165,5 +169,5 @@ while True:
     draw.update()
     plats.update()
     pygame.display.update()
-    pygame.display.set_caption("Le avventure di Ben: livello 3")
+    pygame.display.set_caption("Le avventure di Ben: livello")
     clock.tick(60)
