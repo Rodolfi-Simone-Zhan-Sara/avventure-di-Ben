@@ -132,5 +132,5 @@ while True:
     all_sprites_list.draw(screen)
     screen.blit(scritta,(100, 20))
     pygame.display.flip()
-    pygame.display.set_caption("Le avventure di Ben: livello")
+    pygame.display.set_caption("Le avventure di Ben: livello 4")
     clock.tick(60)     
