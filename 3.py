@@ -136,7 +136,7 @@ build()
 
 font = pygame.font.SysFont("brittanic", 30)
 font1 = pygame.font.SysFont("brittanic", 20)
-testo = font.render("VAI SUBITO ALL'USCITA! GUARDATI ARTTORNO! ☉☉", True, BLACK)
+testo = font.render("VAI SUBITO ALL'USCITA! GUARDATI ATTORNO!", True, BLACK)
 testo1 = font1.render("EXIT", True, BLACK)
 
 while True:
