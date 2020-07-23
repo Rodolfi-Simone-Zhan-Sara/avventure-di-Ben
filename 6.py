@@ -42,10 +42,11 @@ class Player(pygame.sprite.Sprite):
 
 
 pygame.init()
-
+pygame.mixer.init()
 
 player = Player()
 all_sprites_list.add(player)
+game_over = pygame.mixer.Sound("img/Game Over.wav")
 font = pygame.font.SysFont("brittanic", 25)
 scritta = font.render("Schiva più blocchi che puoi !!!", True, BLACK)
 
@@ -90,6 +91,7 @@ while True:
         morte_hit_list = pygame.sprite.spritecollide(player, morte_list, True)
         for giocatore in morte_hit_list:
             all_sprites_list.remove(morte_list)
+            game_over.play()
             salto = -7 
             velocita = 2
             v = 0
@@ -102,4 +104,3 @@ while True:
     pygame.display.flip()
     pygame.display.set_caption("Le avventure di Ben: livello 6")
     clock.tick(60)
-
