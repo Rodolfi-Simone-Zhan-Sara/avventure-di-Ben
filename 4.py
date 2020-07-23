@@ -69,7 +69,7 @@ player.rect.y = 630
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT: 
-            pygame.exit()
+            exit()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT: 
                 player.move_x =- 5
