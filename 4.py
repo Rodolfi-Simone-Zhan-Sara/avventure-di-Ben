@@ -113,8 +113,9 @@ while True:
     for blocco in morte_list:
         morte_hit_list = pygame.sprite.spritecollide(player, morte_list, True)
         for giocatore in morte_hit_list:
-            all_sprites_list.remove(block_list, morte_list)
             crash.play()
+            all_sprites_list.remove(block_list, morte_list)
+
             score = 0
             print(score)  
             
