@@ -100,6 +100,6 @@ while not done:
     all_sprites_list.draw(screen)
     screen.blit(scritta,(50, 20))
     pygame.display.flip()
-    pygame.display.set_caption("Le avventure di Ben: livello")
+    pygame.display.set_caption("Le avventure di Ben: livello 5")
     clock.tick(60)     
 pygame.quit()
