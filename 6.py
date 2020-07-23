@@ -7,9 +7,7 @@ BLUE = (0, 128, 255)
 screen_width = 900
 screen_height = 700
 screen = pygame.display.set_mode([screen_width, screen_height])
-velocita = 2
-salto = -7
-s = 0
+velocita = 2.5
 v = 0
 
 all_sprites_list = pygame.sprite.Group()
@@ -56,14 +54,10 @@ clock = pygame.time.Clock()
 player.rect.x = 150
 
 while True:
-    s +=1
-    if s == 100000:
-        salto -=1
-        s = 0
     
     v += 1
-    if v == 1000:
-        velocita +=2
+    if v == 500:
+        velocita +=1
         v= 0
     print(s)
 
@@ -73,7 +67,7 @@ while True:
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_UP:   
                 if player.onground:   
-                    player.move_y = salto 
+                    player.move_y = -7 
             if event.key == pygame.K_DOWN: 
                 onground = False
                 player.move_y = +10
