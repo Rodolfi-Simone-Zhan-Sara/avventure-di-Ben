@@ -97,11 +97,8 @@ while True:
         morte.rect.y = 0
         morte_list.add(morte)
         all_sprites_list.add(morte)
-
-        
+   
     for blocco in block_list:
-
-
         block_hit_list = pygame.sprite.spritecollide(player, block_list, True)
         for giocatore in block_hit_list:
             block_list.remove(blocco)
@@ -118,7 +115,6 @@ while True:
             score = 0
             print(score)  
             
-
     if score == 30:
         all_sprites_list.remove(player, block_list, morte_list)
         screen.fill(WHITE)
