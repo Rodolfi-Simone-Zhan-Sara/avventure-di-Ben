@@ -52,11 +52,13 @@ class Player(pygame.sprite.Sprite):
 
 
 pygame.init()
+pygame.mixer.init()
 
 score = 0
 player = Player()
 all_sprites_list.add(player)
 
+crash = pygame.mixer.Sound("img/Punch.wav")
 font = pygame.font.SysFont("brittanic", 25)
 scritta = font.render("Prendi 30 blocchi prima che cadano, ma stai attento a quelli ROSSI!!", True, BLACK)
 
@@ -112,6 +114,7 @@ while True:
         morte_hit_list = pygame.sprite.spritecollide(player, morte_list, True)
         for giocatore in morte_hit_list:
             all_sprites_list.remove(block_list, morte_list)
+            crash.play()
             score = 0
             print(score)  
             
