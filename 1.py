@@ -171,5 +171,5 @@ while True:
     screen.blit(testo,(100, 50))
     screen.blit(testo1,(6, 286))
     pygame.display.update()
-    pygame.display.set_caption("Le avventure di Ben: livello")
+    pygame.display.set_caption("Le avventure di Ben: livello 1")
     clock.tick(60)
