@@ -18,7 +18,7 @@ draw = pygame.sprite.Group()
 class Block1(pygame.sprite.Sprite):
     def __init__(self, color):
         super().__init__()
-        self.image = pygame.Surface([30, 20])
+        self.image = pygame.Surface([35, 20])
         self.image.fill(color)
         self.rect = self.image.get_rect()
     def update(self):
@@ -27,7 +27,7 @@ class Block1(pygame.sprite.Sprite):
 class Block2(pygame.sprite.Sprite):
     def __init__(self, color):
         super().__init__()
-        self.image = pygame.Surface([30, 20])
+        self.image = pygame.Surface([35, 20])
         self.image.fill(color)
         self.rect = self.image.get_rect()
     def update(self):
@@ -70,9 +70,9 @@ while True:
             pygame.exit()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT: 
-                player.move_x =- 6
+                player.move_x =- 5
             if event.key == pygame.K_RIGHT:  
-                player.move_x = 6
+                player.move_x = 5
         if event.type == pygame.KEYUP:  
             if event.key == pygame.K_LEFT:
                 player.move_x = 0
@@ -89,7 +89,7 @@ while True:
         block_list.add(block)
         all_sprites_list.add(block)
 
-    n = random.randrange(100)
+    n = random.randrange(120)
 
     if n == 1:
         morte = Block2(RED)
