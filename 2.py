@@ -195,5 +195,5 @@ while True:
     draw.update()
     plats.update()
     pygame.display.update()
-    pygame.display.set_caption("Le avventure di Ben: livello")
+    pygame.display.set_caption("Le avventure di Ben: livello 2")
     clock.tick(60)
