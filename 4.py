@@ -3,8 +3,8 @@ import random
 
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
-AZZURRO = (0, 128, 255)
-ROSSO = (255, 0, 0)
+BLUE = (0, 128, 255)
+RED = (255, 0, 0)
 screen_width = 900
 screen_height = 700
 screen = pygame.display.set_mode([screen_width, screen_height])
@@ -13,7 +13,7 @@ all_sprites_list = pygame.sprite.Group()
 block_list = pygame.sprite.Group()
 morte_list = pygame.sprite.Group()
 
-todraw = pygame.sprite.Group()
+draw = pygame.sprite.Group()
 
 class Block1(pygame.sprite.Sprite):
     def __init__(self, color):
@@ -40,11 +40,11 @@ class Player(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
         self.image = pygame.Surface((7, 25))
-        self.image.fill(AZZURRO)
+        self.image.fill(BLUE)
         self.rect = self.image.get_rect()
         self.rect.x = 600
         self.rect.y = 680
-        todraw.add(self)
+        draw.add(self)
     def update(self):
         self.rect.x += self.move_x
         self.rect.y += self.move_y
@@ -59,9 +59,6 @@ all_sprites_list.add(player)
 
 font = pygame.font.SysFont("brittanic", 25)
 scritta = font.render("Prendi 30 blocchi prima che cadano, ma stai attento a quelli ROSSI!!", True, BLACK)
-
-
-    
 
 clock = pygame.time.Clock()
 
@@ -95,14 +92,13 @@ while True:
     n = random.randrange(100)
 
     if n == 1:
-        morte = Block2(ROSSO)
+        morte = Block2(RED)
         morte.rect.x = random.randrange(5, 875)
         morte.rect.y = 0
         morte_list.add(morte)
         all_sprites_list.add(morte)
 
-
-
+        
     for blocco in block_list:
 
 
@@ -133,4 +129,4 @@ while True:
     screen.blit(scritta,(100, 20))
     pygame.display.flip()
     pygame.display.set_caption("Le avventure di Ben: livello 4")
-    clock.tick(60)     
+    clock.tick(60)  
