@@ -9,6 +9,8 @@ screen_height = 700
 screen = pygame.display.set_mode([screen_width, screen_height])
 velocita = 2.5
 v = 0
+s = 0
+score = 0
 
 all_sprites_list = pygame.sprite.Group()
 morte_list = pygame.sprite.Group()
@@ -55,7 +57,11 @@ clock = pygame.time.Clock()
 player.rect.x = 150
 
 while True:
-    
+    s += 1
+    if s ==10:
+        score += 1
+        s= 0
+
     v += 1
     if v == 500:
         velocita +=1
@@ -66,11 +72,9 @@ while True:
             exit()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_w:   
-                if player.onground:   
-                    player.move_y = -7 
+                player.move_y = -7 
             if event.key == pygame.K_s: 
-                onground = False
-                player.move_y = +10
+                player.move_y = 7
         if event.type == pygame.KEYUP:  
             if event.key == pygame.K_w:
                 player.move_y = 0
@@ -90,12 +94,14 @@ while True:
     for blocco in morte_list:
         morte_hit_list = pygame.sprite.spritecollide(player, morte_list, True)
         for giocatore in morte_hit_list:
-            game_over.play()
             all_sprites_list.remove(morte_list)
+            game_over.play()
 
-            salto = -7 
             velocita = 2
             v = 0
+            score = 0
+            s = 0
+
         if blocco.rect.x < 50:
             all_sprites_list.remove(blocco)		
             
@@ -103,6 +109,5 @@ while True:
     all_sprites_list.draw(screen)
     screen.blit(scritta,(100, 20))
     pygame.display.flip()
-    pygame.display.set_caption("Le avventure di Ben: livello 6")
+    pygame.display.set_caption("Le avventure di Ben: livello 6" + "  Score: " + str(score))
     clock.tick(60)
-
