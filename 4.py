@@ -8,6 +8,8 @@ RED = (255, 0, 0)
 screen_width = 900
 screen_height = 700
 screen = pygame.display.set_mode([screen_width, screen_height])
+Cestino = pygame.image.load("img/cestino.png")
+CESTINO = pygame.transform.scale(Cestino,(60, 55))
 
 all_sprites_list = pygame.sprite.Group()
 block_list = pygame.sprite.Group()
@@ -39,8 +41,7 @@ class Player(pygame.sprite.Sprite):
     onground=False
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.Surface((7, 25))
-        self.image.fill(BLUE)
+        self.image = CESTINO
         self.rect = self.image.get_rect()
         self.rect.x = 600
         self.rect.y = 680
@@ -69,7 +70,7 @@ player.rect.y = 630
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT: 
-            pygame.exit()
+            exit()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_a: 
                 player.move_x =- 5
@@ -80,6 +81,7 @@ while True:
                 player.move_x = 0
             if event.key == pygame.K_d:
                 player.move_x = 0
+
     all_sprites_list.update()
     
     n = random.randrange(30)
