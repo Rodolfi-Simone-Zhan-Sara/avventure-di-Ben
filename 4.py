@@ -106,7 +106,6 @@ while True:
             block_list.remove(blocco)
             all_sprites_list.remove(blocco)
             score += 1
-            print(score)  
         if blocco.rect.y > 640:
             block_list.remove(blocco)
             all_sprites_list.remove(blocco)  
