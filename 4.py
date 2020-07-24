@@ -69,16 +69,16 @@ player.rect.y = 630
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT: 
-            pygame.exit()
+            exit()
         if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_a: 
+            if event.key == pygame.K_LEFT: 
                 player.move_x =- 5
-            if event.key == pygame.K_d:  
+            if event.key == pygame.K_RIGHT:  
                 player.move_x = 5
         if event.type == pygame.KEYUP:  
-            if event.key == pygame.K_a:
+            if event.key == pygame.K_LEFT:
                 player.move_x = 0
-            if event.key == pygame.K_d:
+            if event.key == pygame.K_RIGHT:
                 player.move_x = 0
     all_sprites_list.update()
     
@@ -109,15 +109,15 @@ while True:
             print(score)  
         if blocco.rect.y > 640:
             block_list.remove(blocco)
-            all_sprites_list.remove(blocco)            
+            all_sprites_list.remove(blocco)  
+
     for blocco in morte_list:
         morte_hit_list = pygame.sprite.spritecollide(player, morte_list, True)
         for giocatore in morte_hit_list:
             crash.play()
             all_sprites_list.remove(block_list, morte_list)
-
             score = 0
-            print(score)  
+ 
             
     if score == 30:
         all_sprites_list.remove(player, block_list, morte_list)
@@ -128,5 +128,5 @@ while True:
     all_sprites_list.draw(screen)
     screen.blit(scritta,(100, 20))
     pygame.display.flip()
-    pygame.display.set_caption("Le avventure di Ben: livello 4")
+    pygame.display.set_caption("Le avventure di Ben: livello 4  " + "Score: " + str(score))
     clock.tick(60)  
