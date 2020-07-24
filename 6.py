@@ -7,6 +7,8 @@ BLUE = (0, 128, 255)
 screen_width = 900
 screen_height = 700
 screen = pygame.display.set_mode([screen_width, screen_height])
+Eroe = pygame.image.load("img/eroe.png")
+EROE = pygame.transform.scale(Eroe,(65, 60))
 velocita = 2.5
 v = 0
 s = 0
@@ -31,8 +33,7 @@ class Player(pygame.sprite.Sprite):
     onground=True
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.Surface((30, 20))
-        self.image.fill(BLUE)
+        self.image = EROE
         self.rect = self.image.get_rect()
         self.rect.x = 600
         self.rect.y = 680
