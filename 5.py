@@ -4,6 +4,8 @@ import random
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 
+draw = pygame.sprite.Group()
+
 class Block(pygame.sprite.Sprite):
     def __init__(self, color):
         super().__init__()
@@ -13,16 +15,22 @@ class Block(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
  
 class Player(pygame.sprite.Sprite):
+    move_x = 0
+    move_y = 0
+    
     def __init__(self):
         super().__init__()
  
         self.image = pygame.image.load("img/pistola.png")
         self.image = pygame.transform.scale(self.image, (60, 60))
         self.rect = self.image.get_rect()
- 
+        draw.add(self)
+
     def update(self):
-        pos = pygame.mouse.get_pos()
-        self.rect.x = pos[0]
+        self.rect.x += self.move_x
+        self.rect.y += self.move_y
+        screen.blit(self.image, (self.rect.x, self.rect.y))
+
  
 class Bullet(pygame.sprite.Sprite):
     def __init__(self):
@@ -57,7 +65,7 @@ player = Player()
 all_sprites_list.add(player)
 sparo = pygame.mixer.Sound("img/sparo.wav")
 font = pygame.font.SysFont("brittanic", 25)
-scritta = font.render("TOCCA I BLOCCHI, RIESCI AD ARRIVARE A 50 ? IL TUO PUNTEGGIO SI TROVA SULLA FINESTRA ", True, BLACK)
+scritta = font.render("TOCCA I BLOCCHI, RIESCI AD ARRIVARE A 50 ? IL TUO PUNTEGGIO SI TROVA SUL TERMINALE ", True, BLACK)
 
 done = False
 
@@ -69,7 +77,16 @@ while not done:
     for event in pygame.event.get():
         if event.type == pygame.QUIT: 
             done = True
-
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_a: 
+                player.move_x =- 5
+            if event.key == pygame.K_d:  
+                player.move_x = 5
+        if event.type == pygame.KEYUP:  
+            if event.key == pygame.K_a:
+                player.move_x = 0
+            if event.key == pygame.K_d:
+                player.move_x = 0
         elif event.type == pygame.MOUSEBUTTONDOWN:           
             sparo.play()
             bullet = Bullet()
@@ -86,6 +103,7 @@ while not done:
             bullet_list.remove(bullet)
             all_sprites_list.remove(bullet)
             score += 1
+            print(score)
 
         if bullet.rect.y < -5:
             bullet_list.remove(bullet)
