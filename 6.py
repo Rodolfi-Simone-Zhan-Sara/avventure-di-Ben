@@ -65,16 +65,16 @@ while True:
         if event.type == pygame.QUIT:  
             exit()
         if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_UP:   
+            if event.key == pygame.K_w:   
                 if player.onground:   
                     player.move_y = -7 
-            if event.key == pygame.K_DOWN: 
+            if event.key == pygame.K_s: 
                 onground = False
                 player.move_y = +10
         if event.type == pygame.KEYUP:  
-            if event.key == pygame.K_UP:
+            if event.key == pygame.K_w:
                 player.move_y = 0
-            if event.key == pygame.K_DOWN:
+            if event.key == pygame.K_s:
                 player.move_y = 0
     all_sprites_list.update()
     
@@ -105,3 +105,4 @@ while True:
     pygame.display.flip()
     pygame.display.set_caption("Le avventure di Ben: livello 6")
     clock.tick(60)
+
