@@ -69,16 +69,16 @@ player.rect.y = 630
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT: 
-            exit()
+            pygame.exit()
         if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_LEFT: 
+            if event.key == pygame.K_a: 
                 player.move_x =- 5
-            if event.key == pygame.K_RIGHT:  
+            if event.key == pygame.K_d:  
                 player.move_x = 5
         if event.type == pygame.KEYUP:  
-            if event.key == pygame.K_LEFT:
+            if event.key == pygame.K_a:
                 player.move_x = 0
-            if event.key == pygame.K_RIGHT:
+            if event.key == pygame.K_d:
                 player.move_x = 0
     all_sprites_list.update()
     
