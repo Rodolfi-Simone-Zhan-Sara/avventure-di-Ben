@@ -57,7 +57,7 @@ player = Player()
 all_sprites_list.add(player)
 sparo = pygame.mixer.Sound("img/sparo.wav")
 font = pygame.font.SysFont("brittanic", 25)
-scritta = font.render("TOCCA I BLOCCHI, RIESCI AD ARRIVARE A 50 ? IL TUO PUNTEGGIO SI TROVA SUL TERMINALE ", True, BLACK)
+scritta = font.render("TOCCA I BLOCCHI, RIESCI AD ARRIVARE A 50 ? IL TUO PUNTEGGIO SI TROVA SULLA FINESTRA ", True, BLACK)
 
 done = False
 
@@ -86,7 +86,6 @@ while not done:
             bullet_list.remove(bullet)
             all_sprites_list.remove(bullet)
             score += 1
-            print(score)
 
         if bullet.rect.y < -5:
             bullet_list.remove(bullet)
@@ -101,6 +100,6 @@ while not done:
     all_sprites_list.draw(screen)
     screen.blit(scritta,(50, 20))
     pygame.display.flip()
-    pygame.display.set_caption("Le avventure di Ben: livello 5")
+    pygame.display.set_caption("Le avventure di Ben: livello 5" + "  Score: " + str(score))
     clock.tick(60)     
 pygame.quit()
