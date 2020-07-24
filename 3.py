@@ -136,7 +136,7 @@ build()
 
 font = pygame.font.SysFont("brittanic", 30)
 font1 = pygame.font.SysFont("brittanic", 20)
-testo = font.render("VAI ALL'USCITA! GUARDATI ATTORNO!", True, BLACK)
+testo = font.render("VAI SUBITO ALL'USCITA! GUARDATI ARTTORNO! ", True, BLACK)
 testo1 = font1.render("EXIT", True, BLACK)
 
 while True:
@@ -148,18 +148,18 @@ while True:
         if event.type == pygame.QUIT:  
             exit()
         if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_UP:   
+            if event.key == pygame.K_SPACE:   
                 if player.onground:   
                     player.move_y =- 10
                     player.onground = False
-            if event.key == pygame.K_LEFT: 
+            if event.key == pygame.K_a: 
                 player.move_x = -6
-            if event.key == pygame.K_RIGHT:  
+            if event.key == pygame.K_d:  
                 player.move_x = 6
         if event.type == pygame.KEYUP:  
-            if event.key == pygame.K_LEFT:
+            if event.key == pygame.K_a:
                 player.move_x = 0
-            if event.key == pygame.K_RIGHT:
+            if event.key == pygame.K_d:
                 player.move_x = 0
 
     screen.blit(testo,(100, 50))
