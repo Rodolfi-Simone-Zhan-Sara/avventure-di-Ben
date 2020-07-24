@@ -152,18 +152,18 @@ while True:
         if event.type == pygame.QUIT:  
             exit()
         if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_UP:   
+            if event.key == pygame.K_SPACE:   
                 if player.onground:   
                     player.move_y =- 10
                     player.onground = False
-            if event.key == pygame.K_LEFT: 
+            if event.key == pygame.K_a: 
                 player.move_x = -6
-            if event.key == pygame.K_RIGHT:  
+            if event.key == pygame.K_d:  
                 player.move_x = 6
         if event.type == pygame.KEYUP:  
-            if event.key == pygame.K_LEFT:
+            if event.key == pygame.K_a:
                 player.move_x = 0
-            if event.key == pygame.K_RIGHT:
+            if event.key == pygame.K_d:
                 player.move_x = 0
 
     draw.update()
@@ -173,4 +173,3 @@ while True:
     pygame.display.update()
     pygame.display.set_caption("Le avventure di Ben: livello 1")
     clock.tick(60)
-
