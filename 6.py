@@ -14,7 +14,7 @@ v = 0
 s = 0
 score = 0
 alive = False
-z = 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+z = -1
 
 
 all_sprites_list = pygame.sprite.Group()
@@ -167,7 +167,7 @@ while True:
                 if alive == False:
                     alive = True
                     all_sprites_list.add(player)
-                    z = 15
+                    z = 1
             if event.key == pygame.K_w:   
                 player.move_y = -7 
             if event.key == pygame.K_s: 
@@ -179,9 +179,9 @@ while True:
                 player.move_y = 0
     all_sprites_list.update()
     
-    n = random.randrange(z)
+    n = random.randrange(15)
 
-    if n == 1:
+    if n == z:
         morte = Block(BLACK)
         morte.rect.x = 900
         morte.rect.y = random.randrange(5, 680)
@@ -191,15 +191,17 @@ while True:
     for blocco in morte_list:
         morte_hit_list = pygame.sprite.spritecollide(player, morte_list, True)
         for giocatore in morte_hit_list:
-            all_sprites_list.remove(morte_list, player)
             game_over.play()
+            all_sprites_list.remove(morte_list, player)
+            morte_list = [ ]
+            morte_list = pygame.sprite.Group()
 
             alive = False
             velocita = 2
             v = 0
             score = 0
             s = 0
-            z = 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+            z = -1
         if blocco.rect.x < 50:
             all_sprites_list.remove(blocco)		
             
@@ -213,3 +215,4 @@ while True:
     pygame.display.flip()
     pygame.display.set_caption("Le avventure di Ben: livello 6" + "  Score: " + str(score))
     clock.tick(60)
+
