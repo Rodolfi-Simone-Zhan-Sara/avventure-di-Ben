@@ -13,6 +13,9 @@ velocita = 2.5
 v = 0
 s = 0
 score = 0
+alive = False
+z = 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+
 
 all_sprites_list = pygame.sprite.Group()
 morte_list = pygame.sprite.Group()
@@ -132,11 +135,11 @@ pygame.init()
 pygame.mixer.init()
 
 player = Player()
-all_sprites_list.add(player)
 build()
 game_over = pygame.mixer.Sound("img/Game Over.wav")
 font = pygame.font.SysFont("brittanic", 25)
-scritta = font.render("Schiva più blocchi che puoi !!!", True, BLACK)
+scritta1 = font.render("Schiva più blocchi che puoi !!!", True, BLACK)
+scritta2 = font.render("Premi spazio ed il gioco inizierà!!!", True, BLACK)
 
 clock = pygame.time.Clock()
 
@@ -144,21 +147,27 @@ player.rect.x = 150
 player.rect.y = (screen_height / 2) - 30
 
 
-while True:
-    s += 1
-    if s ==10:
-        score += 1
-        s= 0
+while True: 
+    if alive:
+        s += 1
+        if s ==10:
+            score += 1
+            s= 0
 
-    v += 1
-    if v == 500:
-        velocita +=1
-        v= 0
+        v += 1
+        if v == 500:
+            velocita +=1
+            v= 0
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:  
             exit()
         if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_SPACE :
+                if alive == False:
+                    alive = True
+                    all_sprites_list.add(player)
+                    z = 15
             if event.key == pygame.K_w:   
                 player.move_y = -7 
             if event.key == pygame.K_s: 
@@ -170,7 +179,7 @@ while True:
                 player.move_y = 0
     all_sprites_list.update()
     
-    n = random.randrange(15)
+    n = random.randrange(z)
 
     if n == 1:
         morte = Block(BLACK)
@@ -182,21 +191,25 @@ while True:
     for blocco in morte_list:
         morte_hit_list = pygame.sprite.spritecollide(player, morte_list, True)
         for giocatore in morte_hit_list:
-            all_sprites_list.remove(morte_list)
+            all_sprites_list.remove(morte_list, player)
             game_over.play()
 
+            alive = False
             velocita = 2
             v = 0
             score = 0
             s = 0
-
+            z = 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
         if blocco.rect.x < 50:
             all_sprites_list.remove(blocco)		
             
     screen.fill(WHITE)
     all_sprites_list.draw(screen)
     plats.update()
-    screen.blit(scritta,(100, 30))
+    if not alive:
+        screen.blit(scritta2,(100, 30))
+    else:
+        screen.blit(scritta1,(100, 30))
     pygame.display.flip()
     pygame.display.set_caption("Le avventure di Ben: livello 6" + "  Score: " + str(score))
     clock.tick(60)
