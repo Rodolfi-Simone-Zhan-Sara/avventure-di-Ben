@@ -10,14 +10,16 @@ BLACK = (0, 0, 0)
 pygame.display.set_caption("Le avventure di Ben")
 clock = pygame.time.Clock()
 background_colour = (WHITE)
+pulsante1 = pygame.draw.rect(screen, (WHITE),(100, 450, 250, 200))
+pulsante2 = pygame.draw.rect(screen, (WHITE),(550, 450, 250, 200))
+font = pygame.font.SysFont("brittanic", 45)
+font1 = pygame.font.SysFont("brittanic", 53)
+testo0 = font.render("Giochi ", True, BLACK)
+testo1 = font.render("d'azione", True, BLACK)
+testo2 = font.render("Giochi", True, BLACK)
+testo3 = font.render("d'abilità", True, BLACK)
+testo4 = font1.render("SCEGLI LA MODALITÀ A CUI VUOI GIOCARE!", True, WHITE)
 
-pulsante1 = pygame.draw.rect(screen, (WHITE),(100, 490, 200, 150))
-pulsante2 = pygame.draw.rect(screen, (WHITE),(600, 490, 200, 150))
-carattere = pygame.font.SysFont("brittanic", 35)
-carattere1 = pygame.font.SysFont("brittanic", 57)
-testo1 = carattere.render("Giochi d'azione", True, BLACK)
-testo2 = carattere.render("Giochi di abilità", True, BLACK)
-testo3 = carattere1.render("SCEGLI LA MODALITÀ A CUI VUOI GIOCARE!", True, WHITE)
 
 def livello_1():
     pygame.init()
@@ -1117,11 +1119,10 @@ def livello_6():
         pygame.display.set_caption("Le avventure di Ben: livello 6" + "  Score: " + str(score))
         clock.tick(60)
 
-
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            exit()
+             exit()
         pos = pygame.mouse.get_pos()
         pressed1, pressed2, pressed3 = pygame.mouse.get_pressed()
         if pulsante1.collidepoint(pos) and pressed1:
@@ -1129,14 +1130,13 @@ while True:
         if pulsante2.collidepoint(pos) and pressed1:
             livello_1()
     pygame.display.update()
-    screen.blit(testo1, (100, 540))
-    screen.blit(testo2, (600, 540))
-    screen.blit(testo3, (13, 30))
+    screen.blit(testo0, (160, 515))
+    screen.blit(testo1, (158, 570))
+    screen.blit(testo2, (620, 515))
+    screen.blit(testo3, (620, 570))
+    screen.blit(testo4, (60, 100))
+
 '''
-blocchi + grandi
-blocchi centrati
-testo centrato
-testo + grande a capo
 sfondo
 
 decidere quale titolo 
