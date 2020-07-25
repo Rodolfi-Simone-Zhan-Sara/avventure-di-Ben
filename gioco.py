@@ -111,3 +111,43 @@ entities = (BEN1, LAVA, BASE, PORTA, BLOCCO_SALTO)
 
 while running:
     
+import pygame
+
+pygame.init()
+
+
+screen = pygame.display.set_mode((900, 700))
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+
+pulsante1 = pygame.draw.rect(screen, (WHITE),(100, 490, 200, 150))
+pulsante2 = pygame.draw.rect(screen, (WHITE),(600, 490, 200, 150))
+font = pygame.font.SysFont("brittanic", 35)
+font1 = pygame.font.SysFont("brittanic", 57)
+testo1 = font.render("Giochi d'azione", True, BLACK)
+testo2 = font.render("Giochi di abilità", True, BLACK)
+testo3 = font1.render("SCEGLI LA MODALITÀ A CUI VUOI GIOCARE!", True, WHITE)
+
+running = True
+
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+        pos = pygame.mouse.get_pos()
+        pressed1, pressed2, pressed3 = pygame.mouse.get_pressed()
+        if pulsante1.collidepoint(pos) and pressed1:
+            print("YEAH")
+        if pulsante2.collidepoint(pos) and pressed1:
+            print("WOW")
+    pygame.display.update()
+    screen.blit(testo1, (100, 540))
+    screen.blit(testo2, (600, 540))
+    screen.blit(testo3, (13, 30))
+    
+    '''
+    blocchi + grandi
+    blocchi centrati
+    testo centrato
+    testo + grande a capo
+    '''
