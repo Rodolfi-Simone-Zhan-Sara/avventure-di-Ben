@@ -845,7 +845,7 @@ def livello_5():
     all_sprites_list.add(player)
     sparo = pygame.mixer.Sound("img/sparo.wav")
     font = pygame.font.SysFont("brittanic", 25)
-    scritta = font.render("TOCCA I BLOCCHI, RIESCI AD ARRIVARE A 50 ? IL TUO PUNTEGGIO SI TROVA SUL TERMINALE ", True, BLACK)
+    scritta = font.render("SPARA I BLOCCHI, RIESCI AD ARRIVARE A 50 ? ", True, BLACK)
 
     clock = pygame.time.Clock()
     score = 0
@@ -868,8 +868,8 @@ def livello_5():
             elif event.type == pygame.MOUSEBUTTONDOWN:           
                 sparo.play()
                 bullet = Bullet()
-                bullet.rect.x = player.rect.x
-                bullet.rect.y = player.rect.y
+                bullet.rect.x = player.rect.x + 25
+                bullet.rect.y = player.rect.y + 25
                 all_sprites_list.add(bullet)
                 bullet_list.add(bullet)
         all_sprites_list.update()
