@@ -1139,13 +1139,9 @@ while True:
 
 '''
 sfondo
-decidere quale titolo 
 cercare di ridurre al minimo gli errori di vs 
 idee per migliorare:
-    sparare dal centro nel 5, spara al lato della pistola
-    nel livello 6 una classifica sui tuoi score
+    nel livello 6 una classifica sui tuoi score + data e ora
     tornare alla schermata quando finisci 
     pulsante per tornare alla schermata di scelta
-    pulsante per saltare livello
-sono tutte idee che mi sono venute poi la prossima volta decidiamo cosa fare 
 '''
