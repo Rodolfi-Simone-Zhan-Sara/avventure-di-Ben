@@ -3,6 +3,7 @@ import random
 
 pygame.init()
 
+
 screen = pygame.display.set_mode((900, 700))
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
