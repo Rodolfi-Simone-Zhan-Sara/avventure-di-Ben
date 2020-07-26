@@ -218,7 +218,7 @@ def livello_1():
         screen.blit(testo,(100, 50))
         screen.blit(testo1,(6, 286))
         pygame.display.update()
-        pygame.display.set_caption("Le avventure di Ben: livello 1")
+        pygame.display.set_caption("Le avventure di Ben, abilità : livello 1")
         clock.tick(60)
 
 def livello_2():
@@ -443,7 +443,7 @@ def livello_2():
         plats.update()
         all_sprites_list.draw(screen)
         pygame.display.update()
-        pygame.display.set_caption("Le avventure di Ben: livello 2")
+        pygame.display.set_caption("Le avventure di Ben, abilità : livello 2")
         clock.tick(60)
 
 def livello_3():
@@ -640,7 +640,7 @@ def livello_3():
         screen.blit(testo,(100, 50))
         screen.blit(testo1,(860, 286))
         pygame.display.update()
-        pygame.display.set_caption("Le avventure di Ben: livello")
+        pygame.display.set_caption("Le avventure di Ben, abilità : livello 3")
         clock.tick(60)
 
 def livello_4():
@@ -777,7 +777,7 @@ def livello_4():
         all_sprites_list.draw(screen)
         screen.blit(scritta,(100, 20))
         pygame.display.flip()
-        pygame.display.set_caption("Le avventure di Ben: livello 4  " + "Score: " + str(score))
+        pygame.display.set_caption("Le avventure di Ben, azione : livello 1 " + "Score: " + str(score))
         clock.tick(60)  
 
 def livello_5():
@@ -895,11 +895,11 @@ def livello_5():
         all_sprites_list.draw(screen)
         screen.blit(scritta,(50, 20))
         pygame.display.flip()
-        pygame.display.set_caption("Le avventure di Ben: livello 5" + "  Score: " + str(score))
+        pygame.display.set_caption("Le avventure di Ben, azione : livello 2" + "  Score: " + str(score))
         clock.tick(60)     
     pygame.quit()
 
-def livello_6():
+def livello_6():d
     BLACK = (0, 0, 0)
     WHITE = (255, 255, 255)
     screen_width = 900
@@ -1116,7 +1116,7 @@ def livello_6():
         else:
             screen.blit(scritta1,(100, 30))
         pygame.display.flip()
-        pygame.display.set_caption("Le avventure di Ben: livello 6" + "  Score: " + str(score))
+        pygame.display.set_caption("Le avventure di Ben, azione : livello 3" + "  Score: " + str(score))
         clock.tick(60)
 
 while True:
@@ -1139,16 +1139,13 @@ while True:
 
 '''
 sfondo
-
 decidere quale titolo 
 cercare di ridurre al minimo gli errori di vs 
-
 idee per migliorare:
     sparare dal centro nel 5, spara al lato della pistola
     nel livello 6 una classifica sui tuoi score
     tornare alla schermata quando finisci 
     pulsante per tornare alla schermata di scelta
     pulsante per saltare livello
-
 sono tutte idee che mi sono venute poi la prossima volta decidiamo cosa fare 
 '''
