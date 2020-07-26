@@ -18,8 +18,8 @@ testo0 = font.render("Giochi ", True, BLACK)
 testo1 = font.render("d'azione", True, BLACK)
 testo2 = font.render("Giochi", True, BLACK)
 testo3 = font.render("d'abilità", True, BLACK)
-testo4 = font1.render("SCEGLI LA MODALITÀ A CUI VUOI GIOCARE!", True, WHITE)
-
+testo4 = font1.render("SCEGLI LA MODALITÀ ", True, WHITE)
+testo5 = font1.render("A CUI VUOI GIOCARE!", True, WHITE)
 
 def livello_1():
     pygame.init()
@@ -1134,7 +1134,8 @@ while True:
     screen.blit(testo1, (158, 570))
     screen.blit(testo2, (620, 515))
     screen.blit(testo3, (620, 570))
-    screen.blit(testo4, (60, 100))
+    screen.blit(testo4, (250, 190))
+    screen.blit(testo5, (250, 250))
 
 '''
 sfondo
