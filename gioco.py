@@ -3,7 +3,6 @@ import random
 
 pygame.init()
 
-
 screen = pygame.display.set_mode((900, 700))
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
@@ -900,7 +899,7 @@ def livello_5():
         clock.tick(60)     
     pygame.quit()
 
-def livello_6():d
+def livello_6():
     BLACK = (0, 0, 0)
     WHITE = (255, 255, 255)
     screen_width = 900
