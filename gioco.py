@@ -631,8 +631,7 @@ def livello_3():
 
         morte_hit_list = pygame.sprite.spritecollide(player, all_sprites_list, True)
         if  len(morte_hit_list) > 0:
-            exit()
-
+            breakpoint
 
         draw.update()
         plats.update()
