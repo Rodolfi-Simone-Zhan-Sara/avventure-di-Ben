@@ -981,7 +981,15 @@ def livello_6():
             if player.move_y > 0:
                 player.rect.bottom = block.rect.top
                 player.onground = True
-
+                
+    def Button(cur, rect):
+        if rect.collidepoint(cur):
+            print("YUPPY")
+            
+    def Button1(cur, rect):
+        if rect.collidepoint(cur):
+            print("HELLO")
+                
     def build():
         myx = 0
         myy = 0
@@ -1042,7 +1050,8 @@ def livello_6():
     font = pygame.font.SysFont("brittanic", 25)
     scritta1 = font.render("Schiva più blocchi che puoi !!!", True, BLACK)
     scritta2 = font.render("Premi spazio ed il gioco inizierà!!!", True, BLACK)
-
+    scritta3 = font.render("MENU", False, WHITE)
+    scritta4 = font.render("CLASSIFICA", True, WHITE)
     clock = pygame.time.Clock()
 
     player.rect.x = 150
@@ -1112,6 +1121,17 @@ def livello_6():
         plats.update()
         if not alive:
             screen.blit(scritta2,(100, 30))
+            pulsante = pygame.Rect((250, 500), (120, 70))
+            pulsante1 = pygame.Rect((600, 500), (120, 70))
+            screen.fill((0, 0, 0), pulsante)
+            screen.fill((0, 0, 0), pulsante1)
+            screen.blit(scritta3,(285, 525))
+            screen.blit(scritta4,(610, 525))
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if event.button == 1:  
+                    Button(event.pos, pulsante)
+                    Button1(event.pos, pulsante1)
+                   
         else:
             screen.blit(scritta1,(100, 30))
         pygame.display.flip()
