@@ -8,20 +8,18 @@ WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 
 pygame.display.set_caption("Le avventure di Ben")
-clock = pygame.time.Clock()
 sfondo = pygame.image.load("img/sfondo.jpg")
 SFONDO = pygame.transform.scale(sfondo,(900, 700))
 screen.blit(SFONDO, (0, 0))
-pulsante1 = pygame.draw.rect(screen, (WHITE),(100, 450, 250, 200))
-pulsante2 = pygame.draw.rect(screen, (WHITE),(550, 450, 250, 200))
+clock = pygame.time.Clock()
 font = pygame.font.SysFont("brittanic", 45)
 font1 = pygame.font.SysFont("brittanic", 53)
 testo0 = font.render("Giochi ", True, BLACK)
 testo1 = font.render("d'azione", True, BLACK)
 testo2 = font.render("Giochi", True, BLACK)
 testo3 = font.render("d'abilità", True, BLACK)
-testo4 = font1.render("SCEGLI LA MODALITÀ ", True, WHITE)
-testo5 = font1.render("A CUI VUOI GIOCARE!", True, WHITE)
+testo4 = font1.render("SCEGLI LA MODALITÀ ", True, BLACK)
+testo5 = font1.render("A CUI VUOI GIOCARE!", True, BLACK)
 
 def livello_1():
     pygame.init()
@@ -1141,6 +1139,10 @@ def livello_6():
         clock.tick(60)
 
 while True:
+    pygame.display.update()
+    Blocco = pygame.draw.rect(screen, (WHITE),(247, 97, 404, 100))
+    pulsante1 = pygame.draw.rect(screen, (WHITE),(100, 450, 250, 200))
+    pulsante2 = pygame.draw.rect(screen, (WHITE),(550, 450, 250, 200))
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
              exit()
@@ -1150,13 +1152,12 @@ while True:
             livello_4()
         if pulsante2.collidepoint(pos) and pressed1:
             livello_1()
-    pygame.display.update()
     screen.blit(testo0, (160, 515))
     screen.blit(testo1, (158, 570))
     screen.blit(testo2, (620, 515))
     screen.blit(testo3, (620, 570))
-    screen.blit(testo4, (250, 190))
-    screen.blit(testo5, (250, 250))
+    screen.blit(testo4, (250, 100))
+    screen.blit(testo5, (250, 160))
 
 '''
 sfondo
