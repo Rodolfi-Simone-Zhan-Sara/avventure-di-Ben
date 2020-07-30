@@ -211,6 +211,7 @@ def livello_1():
         morte_hit_list = pygame.sprite.spritecollide(player, all_sprites_list, True)
         if  len(morte_hit_list) > 0:
             livello_2()
+            break
 
         draw.update()
         plats.update() 
@@ -222,6 +223,203 @@ def livello_1():
         clock.tick(60)
 
 def livello_2():
+    pygame.init()
+
+    screen = pygame.display.set_mode((900,700), 0, 32)
+    clock = pygame.time.Clock()
+    BLACK = (0, 0, 0)
+    WHITE = (255, 255, 255)
+    Ben = pygame.image.load("img/ben2.png")
+    BEN = pygame.transform.scale(Ben,(52, 55))
+    draw = pygame.sprite.Group()
+    plats = pygame.sprite.Group()
+    all_sprites_list = pygame.sprite.Group()
+
+
+    class Block(pygame.sprite.Sprite):
+        def __init__(self):
+            super().__init__()
+    
+            self.image = pygame.Surface([25, 60])
+            self.image.fill(WHITE)
+            self.rect = self.image.get_rect()
+            self.rect.x = 880
+            self.rect.y = 260
+
+    class Platform(pygame.sprite.Sprite):
+        def __init__(self,x,y):
+            pygame.sprite.Sprite.__init__(self)
+            self.image = pygame.Surface((25, 25))
+            self.image.fill(BLACK)
+            self.rect = self.image.get_rect()
+            self.rect.x = x
+            self.rect.y = y
+            plats.add(self)
+
+        def update(self):
+            screen.blit(self.image, (self.rect.x, self.rect.y))
+
+    class Platform1(pygame.sprite.Sprite):
+        def __init__(self,x,y):
+            pygame.sprite.Sprite.__init__(self)
+            self.image = pygame.Surface((25, 25))
+            self.image.fill(WHITE)
+            self.rect = self.image.get_rect()
+            self.rect.x = x
+            self.rect.y = y
+            plats.add(self)
+
+        def update(self):
+            screen.blit(self.image, (self.rect.x, self.rect.y))
+
+    class Player(pygame.sprite.Sprite):
+        move_x = 0
+        move_y = 0
+        onground=False
+
+        def __init__(self):
+            pygame.sprite.Sprite.__init__(self)
+            self.image = BEN
+            self.rect=self.image.get_rect()
+            self.rect.x = 120
+            self.rect.y = 650
+            draw.add(self)
+
+        def update(self):
+            self.rect.x += self.move_x
+            xcoll()
+            self.rect.y += self.move_y
+            ycoll()
+            screen.blit(self.image, (self.rect.x, self.rect.y))
+
+    def xcoll():
+        collision = pygame.sprite.spritecollide(player, plats, False)
+        for block in collision:
+            if player.move_x > 0:
+                player.rect.right = block.rect.left
+            if player.move_x < 0:
+                player.rect.left = block.rect.right
+
+    def ycoll():
+        collision = pygame.sprite.spritecollide(player, plats, False)
+        player.onground = False
+        for block in collision:
+            if player.move_y == 0:
+                player.onground = True
+            if player.move_y < 0:
+                player.rect.top = block.rect.bottom
+                player.move_y = 0     
+                player.onground = False
+            if player.move_y > 0:
+                player.rect.bottom = block.rect.top
+                player.onground = True
+
+    def build():
+        myx = 0
+        myy = 0
+        level = [
+                '#############################################',
+                '#                                           #',
+                '#                                           #',
+                '#                                           #',
+                '#                                           #',
+                '#                                           #',
+                '#                                           #',
+                '#                                           #',
+                '#                                           #',
+                '#                                           #',
+                '#                                           #',
+                '#                                           #',
+                '#                                           #',
+                '#                                            ',
+                '#                                            ',
+                '#                                            ',
+                '#                             - - - - - - ###',
+                '#                                           #',
+                '#                        -                  #',
+                '#                            #              #',
+                '#                    -                      #',
+                '#                                           #',
+                '#                 -                 #       #',
+                '#                                           #',
+                '#             -                             #',
+                '#                                          ##',
+                '#          -                                #',
+                '#                                      #    #',
+                '#       -                                   #',
+                '#                                #          #',
+                '#    -                                      #',
+                '#                         #                 #',
+                '#-                                          #',
+                '#                   #          #            #',
+                '#############################################']
+
+        for r in level:
+            for c in r:
+                if c == ' ':
+                    pass
+                elif c == '-':
+                    p = Platform1(myx,myy)
+                elif c == '#':
+                    p = Platform(myx,myy)
+                myx += 20
+            myy += 20
+            myx = 0
+
+
+    def gravity():
+        if not player.onground:
+            player.move_y += 1
+
+
+    player = Player()
+    build()
+    block = Block()
+    all_sprites_list.add(block)
+    
+    font = pygame.font.SysFont("brittanic", 30)
+    font1 = pygame.font.SysFont("brittanic", 20)
+    testo = font.render("VAI SUBITO ALL'USCITA! GUARDATI ATTORNO! ", True, BLACK)
+    testo1 = font1.render("EXIT", True, BLACK)
+
+    while True:
+
+        screen.fill(WHITE)
+        gravity()
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:  
+                exit()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE:   
+                    if player.onground:   
+                        player.move_y =- 10
+                        player.onground = False
+                if event.key == pygame.K_a: 
+                    player.move_x = -6
+                if event.key == pygame.K_d:  
+                    player.move_x = 6
+            if event.type == pygame.KEYUP:  
+                if event.key == pygame.K_a:
+                    player.move_x = 0
+                if event.key == pygame.K_d:
+                    player.move_x = 0
+
+        morte_hit_list = pygame.sprite.spritecollide(player, all_sprites_list, True)
+        if  len(morte_hit_list) > 0:
+            livello_3()
+            break
+
+        draw.update()
+        plats.update()
+        all_sprites_list.draw(screen)
+        screen.blit(testo,(100, 50))
+        screen.blit(testo1,(860, 286))
+        pygame.display.update()
+        pygame.display.set_caption("Le avventure di Ben, abilità : livello 3")
+        clock.tick(60)
+
+def livello_3():
     pygame.init()
 
     screen = pygame.display.set_mode((900,700), 0, 32)
@@ -435,7 +633,7 @@ def livello_2():
 
         morte_hit_list = pygame.sprite.spritecollide(player, all_sprites_list, True)
         if  len(morte_hit_list) > 0:
-            livello_3()
+            break
 
         screen.blit(testo,(230, 50))
         screen.blit(testo1,(7, 250))
@@ -444,202 +642,6 @@ def livello_2():
         all_sprites_list.draw(screen)
         pygame.display.update()
         pygame.display.set_caption("Le avventure di Ben, abilità : livello 2")
-        clock.tick(60)
-
-def livello_3():
-    pygame.init()
-
-    screen = pygame.display.set_mode((900,700), 0, 32)
-    clock = pygame.time.Clock()
-    BLACK = (0, 0, 0)
-    WHITE = (255, 255, 255)
-    Ben = pygame.image.load("img/ben2.png")
-    BEN = pygame.transform.scale(Ben,(52, 55))
-    draw = pygame.sprite.Group()
-    plats = pygame.sprite.Group()
-    all_sprites_list = pygame.sprite.Group()
-
-
-    class Block(pygame.sprite.Sprite):
-        def __init__(self):
-            super().__init__()
-    
-            self.image = pygame.Surface([25, 60])
-            self.image.fill(WHITE)
-            self.rect = self.image.get_rect()
-            self.rect.x = 880
-            self.rect.y = 260
-
-    class Platform(pygame.sprite.Sprite):
-        def __init__(self,x,y):
-            pygame.sprite.Sprite.__init__(self)
-            self.image = pygame.Surface((25, 25))
-            self.image.fill(BLACK)
-            self.rect = self.image.get_rect()
-            self.rect.x = x
-            self.rect.y = y
-            plats.add(self)
-
-        def update(self):
-            screen.blit(self.image, (self.rect.x, self.rect.y))
-
-    class Platform1(pygame.sprite.Sprite):
-        def __init__(self,x,y):
-            pygame.sprite.Sprite.__init__(self)
-            self.image = pygame.Surface((25, 25))
-            self.image.fill(WHITE)
-            self.rect = self.image.get_rect()
-            self.rect.x = x
-            self.rect.y = y
-            plats.add(self)
-
-        def update(self):
-            screen.blit(self.image, (self.rect.x, self.rect.y))
-
-    class Player(pygame.sprite.Sprite):
-        move_x = 0
-        move_y = 0
-        onground=False
-
-        def __init__(self):
-            pygame.sprite.Sprite.__init__(self)
-            self.image = BEN
-            self.rect=self.image.get_rect()
-            self.rect.x = 120
-            self.rect.y = 650
-            draw.add(self)
-
-        def update(self):
-            self.rect.x += self.move_x
-            xcoll()
-            self.rect.y += self.move_y
-            ycoll()
-            screen.blit(self.image, (self.rect.x, self.rect.y))
-
-    def xcoll():
-        collision = pygame.sprite.spritecollide(player, plats, False)
-        for block in collision:
-            if player.move_x > 0:
-                player.rect.right = block.rect.left
-            if player.move_x < 0:
-                player.rect.left = block.rect.right
-
-    def ycoll():
-        collision = pygame.sprite.spritecollide(player, plats, False)
-        player.onground = False
-        for block in collision:
-            if player.move_y == 0:
-                player.onground = True
-            if player.move_y < 0:
-                player.rect.top = block.rect.bottom
-                player.move_y = 0     
-                player.onground = False
-            if player.move_y > 0:
-                player.rect.bottom = block.rect.top
-                player.onground = True
-
-    def build():
-        myx = 0
-        myy = 0
-        level = [
-                '#############################################',
-                '#                                           #',
-                '#                                           #',
-                '#                                           #',
-                '#                                           #',
-                '#                                           #',
-                '#                                           #',
-                '#                                           #',
-                '#                                           #',
-                '#                                           #',
-                '#                                           #',
-                '#                                           #',
-                '#                                           #',
-                '#                                            ',
-                '#                                            ',
-                '#                                            ',
-                '#                             - - - - - - ###',
-                '#                                           #',
-                '#                        -                  #',
-                '#                            #              #',
-                '#                    -                      #',
-                '#                                           #',
-                '#                 -                 #       #',
-                '#                                           #',
-                '#             -                             #',
-                '#                                          ##',
-                '#          -                                #',
-                '#                                      #    #',
-                '#       -                                   #',
-                '#                                #          #',
-                '#    -                                      #',
-                '#                         #                 #',
-                '#-                                          #',
-                '#                   #          #            #',
-                '#############################################']
-
-        for r in level:
-            for c in r:
-                if c == ' ':
-                    pass
-                elif c == '-':
-                    p = Platform1(myx,myy)
-                elif c == '#':
-                    p = Platform(myx,myy)
-                myx += 20
-            myy += 20
-            myx = 0
-
-
-    def gravity():
-        if not player.onground:
-            player.move_y += 1
-
-
-    player = Player()
-    build()
-    block = Block()
-    all_sprites_list.add(block)
-    
-    font = pygame.font.SysFont("brittanic", 30)
-    font1 = pygame.font.SysFont("brittanic", 20)
-    testo = font.render("VAI SUBITO ALL'USCITA! GUARDATI ATTORNO! ", True, BLACK)
-    testo1 = font1.render("EXIT", True, BLACK)
-
-    while True:
-
-        screen.fill(WHITE)
-        gravity()
-
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:  
-                exit()
-            if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_SPACE:   
-                    if player.onground:   
-                        player.move_y =- 10
-                        player.onground = False
-                if event.key == pygame.K_a: 
-                    player.move_x = -6
-                if event.key == pygame.K_d:  
-                    player.move_x = 6
-            if event.type == pygame.KEYUP:  
-                if event.key == pygame.K_a:
-                    player.move_x = 0
-                if event.key == pygame.K_d:
-                    player.move_x = 0
-
-        morte_hit_list = pygame.sprite.spritecollide(player, all_sprites_list, True)
-        if  len(morte_hit_list) > 0:
-            breakpoint
-
-        draw.update()
-        plats.update()
-        all_sprites_list.draw(screen)
-        screen.blit(testo,(100, 50))
-        screen.blit(testo1,(860, 286))
-        pygame.display.update()
-        pygame.display.set_caption("Le avventure di Ben, abilità : livello 3")
         clock.tick(60)
 
 def livello_4():
@@ -738,7 +740,7 @@ def livello_4():
             block_list.add(block)
             all_sprites_list.add(block)
 
-        n = random.randrange(120)
+        n = random.randrange(90)
 
         if n == 1:
             morte = Block2(RED)
@@ -1140,6 +1142,7 @@ def livello_6():
 
 while True:
     pygame.display.update()
+    screen.blit(SFONDO, (0, 0))
     Blocco = pygame.draw.rect(screen, (WHITE),(247, 97, 404, 100))
     pulsante1 = pygame.draw.rect(screen, (WHITE),(100, 450, 250, 200))
     pulsante2 = pygame.draw.rect(screen, (WHITE),(550, 450, 250, 200))
@@ -1160,7 +1163,6 @@ while True:
     screen.blit(testo5, (250, 160))
 
 '''
-sfondo
 cercare di ridurre al minimo gli errori di vs 
 idee per migliorare:
     nel livello 6 una classifica sui tuoi score + data e ora
