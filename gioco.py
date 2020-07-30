@@ -7,7 +7,6 @@ screen = pygame.display.set_mode((900, 700))
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 
-pygame.display.set_caption("Le avventure di Ben")
 sfondo = pygame.image.load("img/sfondo.jpg")
 SFONDO = pygame.transform.scale(sfondo,(900, 700))
 clock = pygame.time.Clock()
@@ -20,7 +19,8 @@ testo3 = font.render("d'abilità", True, BLACK)
 testo4 = font1.render("SCEGLI LA MODALITÀ ", True, BLACK)
 testo5 = font1.render("A CUI VUOI GIOCARE!", True, BLACK)
 
-def menu(SFONDO, screen, WHITE, livello_1, livello_5):
+def menu(SFONDO, screen, WHITE, livello_1, livello_4):
+    pygame.display.set_caption("Le avventure di Ben")
     while True:
         pygame.display.update()
         screen.blit(SFONDO, (0, 0))
@@ -33,9 +33,11 @@ def menu(SFONDO, screen, WHITE, livello_1, livello_5):
             pos = pygame.mouse.get_pos()
             pressed1, pressed2, pressed3 = pygame.mouse.get_pressed()
             if pulsante1.collidepoint(pos) and pressed1:
-                livello_5()
+                livello_4()
+
             if pulsante2.collidepoint(pos) and pressed1:
                 livello_1()
+
         screen.blit(testo0, (160, 515))
         screen.blit(testo1, (158, 570))
         screen.blit(testo2, (620, 515))
@@ -234,7 +236,6 @@ def livello_1():
         morte_hit_list = pygame.sprite.spritecollide(player, all_sprites_list, True)
         if  len(morte_hit_list) > 0:
             livello_2()
-            break
 
         draw.update()
         plats.update() 
@@ -431,7 +432,7 @@ def livello_2():
         morte_hit_list = pygame.sprite.spritecollide(player, all_sprites_list, True)
         if  len(morte_hit_list) > 0:
             livello_3()
-            break
+
 
         draw.update()
         plats.update()
@@ -439,7 +440,7 @@ def livello_2():
         screen.blit(testo,(100, 50))
         screen.blit(testo1,(860, 286))
         pygame.display.update()
-        pygame.display.set_caption("Le avventure di Ben, abilità : livello 3")
+        pygame.display.set_caption("Le avventure di Ben, abilità : livello 2")
         clock.tick(60)
 
 def livello_3():
@@ -656,7 +657,8 @@ def livello_3():
 
         morte_hit_list = pygame.sprite.spritecollide(player, all_sprites_list, True)
         if  len(morte_hit_list) > 0:
-            break
+            menu(SFONDO, screen, WHITE, livello_1, livello_4)
+
 
         screen.blit(testo,(230, 50))
         screen.blit(testo1,(7, 250))
@@ -664,7 +666,7 @@ def livello_3():
         plats.update()
         all_sprites_list.draw(screen)
         pygame.display.update()
-        pygame.display.set_caption("Le avventure di Ben, abilità : livello 2")
+        pygame.display.set_caption("Le avventure di Ben, abilità : livello 3")
         clock.tick(60)
 
 def livello_4():
@@ -796,7 +798,6 @@ def livello_4():
             all_sprites_list.remove(player, block_list, morte_list)
             screen.fill(WHITE)
             livello_5()
-            break
             
         screen.fill(WHITE)
         all_sprites_list.draw(screen)
@@ -916,9 +917,7 @@ def livello_5():
                 all_sprites_list.remove(bullet, player, block)
                 screen.fill(WHITE)
                 livello_6()
-                score = -1
-        if score == -1:
-            break
+
         screen.fill(WHITE)
         all_sprites_list.draw(screen)
         screen.blit(scritta,(50, 20))
@@ -1012,8 +1011,7 @@ def livello_6():
                 player.onground = True
     def Button(cur, rect ):
         if rect.collidepoint(cur):
-            pygame.display.set_caption("Le avventure di Ben")
-            menu(SFONDO, screen, WHITE, livello_1, livello_5)              
+            menu(SFONDO, screen, WHITE, livello_1, livello_4)              
 
     def Button1(cur, rect):
         if rect.collidepoint(cur):
@@ -1170,12 +1168,10 @@ def livello_6():
         pygame.display.set_caption("Le avventure di Ben, azione : livello 3" + "  Score: " + str(score))
         clock.tick(60)
 
-menu(SFONDO, screen, WHITE, livello_1, livello_5)
+menu(SFONDO, screen, WHITE, livello_1, livello_4)
 
 '''
 cercare di ridurre al minimo gli errori di vs 
 idee per migliorare:
     nel livello 6 una classifica sui tuoi score + data e ora
-    tornare alla schermata quando finisci 
-    pulsante per tornare alla schermata di scelta
 '''
