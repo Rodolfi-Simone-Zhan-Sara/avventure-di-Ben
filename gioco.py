@@ -1077,8 +1077,9 @@ def livello_6():
     
     game_over = pygame.mixer.Sound("img/Game Over.wav")
     font = pygame.font.SysFont("brittanic", 25)
+    font1 = pygame.font.SysFont("brittanic", 65)
     scritta1 = font.render("Schiva più blocchi che puoi !!!", True, BLACK)
-    scritta2 = font.render("Premi spazio ed il gioco inizierà!!!", True, BLACK)
+    scritta2 = font1.render("Premi spazio ed il gioco inizierà!!!", True, BLACK)
     scritta3 = font.render("MENU", False, WHITE)
     scritta4 = font.render("CLASSIFICA", True, WHITE)
     clock = pygame.time.Clock()
@@ -1150,7 +1151,7 @@ def livello_6():
         all_sprites_list.draw(screen)
         plats.update()
         if not alive:
-            screen.blit(scritta2,(100, 30))
+            screen.blit(scritta2,(100, 200))
             pulsante = pygame.Rect((250, 500), (120, 70))
             pulsante1 = pygame.Rect((600, 500), (120, 70))
             screen.fill((0, 0, 0), pulsante)
