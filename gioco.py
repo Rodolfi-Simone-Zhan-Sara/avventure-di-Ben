@@ -795,7 +795,7 @@ def livello_4():
                 score = 0
     
                 
-        if score == 2:
+        if score == 30:
             all_sprites_list.remove(player, block_list, morte_list)
             screen.fill(WHITE)
             livello_5()
@@ -914,7 +914,7 @@ def livello_5():
                 bullet_list.remove(bullet)
                 all_sprites_list.remove(bullet)
 
-            elif score == 1:
+            elif score == 50:
                 all_sprites_list.remove(bullet, player, block)
                 screen.fill(WHITE)
                 livello_6()
