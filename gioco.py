@@ -1172,7 +1172,7 @@ def livello_6():
                 screen.fill((0, 0, 0), pulsante1)
                 screen.fill((0, 0, 0), pulsante2)
                 screen.blit(testo3,(260, 525))
-                screen.blit(testo4,(640, 525))
+                screen.blit(testo4,(637, 525))
 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1:  
