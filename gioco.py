@@ -13,38 +13,39 @@ SFONDO = pygame.transform.scale(sfondo,(900, 700))
 clock = pygame.time.Clock()
 font = pygame.font.SysFont("brittanic", 45)
 font1 = pygame.font.SysFont("brittanic", 53)
-testo0 = font.render("Giochi ", True, BLACK)
-testo1 = font.render("d'azione", True, BLACK)
-testo2 = font.render("Giochi", True, BLACK)
-testo3 = font.render("d'abilità", True, BLACK)
-testo4 = font1.render("SCEGLI LA MODALITÀ ", True, BLACK)
-testo5 = font1.render("A CUI VUOI GIOCARE!", True, BLACK)
+testo1 = font.render("Giochi ", True, BLACK)
+testo2 = font.render("d'azione", True, BLACK)
+testo3 = font.render("Giochi", True, BLACK)
+testo4 = font.render("d'abilità", True, BLACK)
+testo5 = font1.render("SCEGLI LA MODALITÀ ", True, BLACK)
+testo6 = font1.render("A CUI VUOI GIOCARE!", True, BLACK)
 
 def menu(SFONDO, screen, WHITE, livello_1, livello_4):
     pygame.display.set_caption("Le avventure di Ben")
+
     while True:
         pygame.display.update()
         screen.blit(SFONDO, (0, 0))
         Blocco = pygame.draw.rect(screen, (WHITE),(247, 97, 404, 100))
-        pulsante1 = pygame.draw.rect(screen, (WHITE),(100, 450, 250, 200))
-        pulsante2 = pygame.draw.rect(screen, (WHITE),(550, 450, 250, 200))
+        pulsante_azione = pygame.draw.rect(screen, (WHITE),(100, 450, 250, 200))
+        pulsante_abilita = pygame.draw.rect(screen, (WHITE),(550, 450, 250, 200))
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 exit()
             pos = pygame.mouse.get_pos()
             pressed1, pressed2, pressed3 = pygame.mouse.get_pressed()
-            if pulsante1.collidepoint(pos) and pressed1:
-                livello_4()
 
-            if pulsante2.collidepoint(pos) and pressed1:
+            if pulsante_azione.collidepoint(pos) and pressed1:
+                livello_4()
+            if pulsante_abilita.collidepoint(pos) and pressed1:
                 livello_1()
 
-        screen.blit(testo0, (160, 515))
-        screen.blit(testo1, (158, 570))
-        screen.blit(testo2, (620, 515))
-        screen.blit(testo3, (620, 570))
-        screen.blit(testo4, (250, 100))
-        screen.blit(testo5, (250, 160))
+        screen.blit(testo1, (160, 515))
+        screen.blit(testo2, (158, 570))
+        screen.blit(testo3, (620, 515))
+        screen.blit(testo4, (620, 570))
+        screen.blit(testo5, (250, 100))
+        screen.blit(testo6, (250, 160))
 
 
 def livello_1():
@@ -196,7 +197,6 @@ def livello_1():
         if not player.onground:
             player.move_y += 1
 
-
     player = Player()
     build()
     block = Block()
@@ -205,8 +205,8 @@ def livello_1():
 
     font = pygame.font.SysFont("brittanic", 30)
     font1 = pygame.font.SysFont("brittanic", 20)
-    testo = font.render("Raggiungi l'uscita, stai attento !", True, BLACK)
-    testo1 = font1.render("EXIT", True, BLACK)
+    testo1 = font.render("Raggiungi l'uscita, stai attento !", True, BLACK)
+    testo2 = font1.render("EXIT", True, BLACK)
 
     while True:
 
@@ -239,8 +239,8 @@ def livello_1():
         draw.update()
         plats.update() 
         all_sprites_list.draw(screen)
-        screen.blit(testo,(100, 50))
-        screen.blit(testo1,(6, 286))
+        screen.blit(testo1,(100, 50))
+        screen.blit(testo2,(6, 286))
         pygame.display.update()
         pygame.display.set_caption("Le avventure di Ben, abilità : livello 1")
         clock.tick(60)
@@ -394,7 +394,6 @@ def livello_2():
         if not player.onground:
             player.move_y += 1
 
-
     player = Player()
     build()
     block = Block()
@@ -402,8 +401,8 @@ def livello_2():
     
     font = pygame.font.SysFont("brittanic", 30)
     font1 = pygame.font.SysFont("brittanic", 20)
-    testo = font.render("VAI SUBITO ALL'USCITA! GUARDATI ATTORNO! ", True, BLACK)
-    testo1 = font1.render("EXIT", True, BLACK)
+    testo1 = font.render("VAI SUBITO ALL'USCITA! GUARDATI ATTORNO! ", True, BLACK)
+    testo2 = font1.render("EXIT", True, BLACK)
 
     while True:
 
@@ -436,8 +435,8 @@ def livello_2():
         draw.update()
         plats.update()
         all_sprites_list.draw(screen)
-        screen.blit(testo,(100, 50))
-        screen.blit(testo1,(860, 286))
+        screen.blit(testo1,(100, 50))
+        screen.blit(testo2,(860, 286))
         pygame.display.update()
         pygame.display.set_caption("Le avventure di Ben, abilità : livello 2")
         clock.tick(60)
@@ -628,9 +627,9 @@ def livello_3():
 
 
     font = pygame.font.SysFont("brittanic", 30)
-    testo = font.render("S P E C C H I O ? ? ?", True, BLACK)
+    testo1 = font.render("S P E C C H I O ? ? ?", True, BLACK)
     font1 = pygame.font.SysFont("brittanic", 20)
-    testo1 = font1.render("EXIT", True, BLACK)
+    testo2 = font1.render("EXIT", True, BLACK)
 
     while True:
         screen.fill(WHITE)
@@ -659,8 +658,8 @@ def livello_3():
             menu(SFONDO, screen, WHITE, livello_1, livello_4)
 
 
-        screen.blit(testo,(230, 50))
-        screen.blit(testo1,(7, 250))
+        screen.blit(testo1,(230, 50))
+        screen.blit(testo2,(7, 250))
         draw.update()
         plats.update()
         all_sprites_list.draw(screen)
@@ -681,7 +680,6 @@ def livello_4():
     all_sprites_list = pygame.sprite.Group()
     block_list = pygame.sprite.Group()
     morte_list = pygame.sprite.Group()
-
     draw = pygame.sprite.Group()
 
     class Block1(pygame.sprite.Sprite):
@@ -732,8 +730,7 @@ def livello_4():
 
     crash = pygame.mixer.Sound("img/Punch.wav")
     font = pygame.font.SysFont("brittanic", 25)
-    scritta = font.render("Prendi 30 blocchi prima che cadano, ma stai attento a quelli ROSSI!!", True, BLACK)
-
+    testo = font.render("Prendi 30 blocchi prima che cadano, ma stai attento a quelli ROSSI!!", True, BLACK)
     clock = pygame.time.Clock()
 
     player.rect.y = 630
@@ -799,12 +796,13 @@ def livello_4():
             
         screen.fill(WHITE)
         all_sprites_list.draw(screen)
-        screen.blit(scritta,(100, 20))
+        screen.blit(testo,(100, 20))
         pygame.display.flip()
         pygame.display.set_caption("Le avventure di Ben, azione : livello 1 " + "Score: " + str(score))
         clock.tick(60)  
 
 def livello_5():
+
     BLACK = (0, 0, 0)
     WHITE = (255, 255, 255)
 
@@ -846,7 +844,6 @@ def livello_5():
         def update(self):
             self.rect.y -= 8
 
-
     pygame.init()
     pygame.mixer.init()
 
@@ -868,7 +865,7 @@ def livello_5():
     all_sprites_list.add(player)
     sparo = pygame.mixer.Sound("img/sparo.wav")
     font = pygame.font.SysFont("brittanic", 25)
-    scritta = font.render("SPARA I BLOCCHI, RIESCI AD ARRIVARE A 50 ? ", True, BLACK)
+    testo = font.render("SPARA I BLOCCHI, RIESCI AD ARRIVARE A 50 ? ", True, BLACK)
 
     clock = pygame.time.Clock()
     score = 0
@@ -917,13 +914,14 @@ def livello_5():
 
         screen.fill(WHITE)
         all_sprites_list.draw(screen)
-        screen.blit(scritta,(50, 20))
+        screen.blit(testo,(50, 20))
         pygame.display.flip()
         pygame.display.set_caption("Le avventure di Ben, azione : livello 2" + "  Score: " + str(score))
         clock.tick(60)     
     pygame.quit()
 
 def livello_6():
+
     BLACK = (0, 0, 0)
     WHITE = (255, 255, 255)
     screen_width = 900
@@ -937,7 +935,6 @@ def livello_6():
     score = 0
     alive = True
     z = 1
-    tempo = time.asctime( time.localtime(time.time()) )
     punteggi = []
 
     all_sprites_list = pygame.sprite.Group()
@@ -1007,22 +1004,24 @@ def livello_6():
             if player.move_y > 0:
                 player.rect.bottom = block.rect.top
                 player.onground = True
-    def Button(cur, rect ):
+
+    def Button_menu(cur, rect):
         if rect.collidepoint(cur):
             menu(SFONDO, screen, WHITE, livello_1, livello_4)              
 
-    def Button1(cur, rect, punteggi):
+    def Button_classifica(cur, rect, punteggi):
         if rect.collidepoint(cur):
             font = pygame.font.SysFont("brittanic", 50)
             x = 30
             y = 30
 
+
             pygame.init()
             clock = pygame.time.Clock()
 
-            scritta1 = font.render(str(n), True, BLACK)
+            testo = font.render(str(n), True, BLACK)
             screen.fill(WHITE)
-            screen.blit(scritta1, (x, y))
+            screen.blit(testo, (x, y))
 
             while True:
                 for event in pygame.event.get():
@@ -1032,9 +1031,6 @@ def livello_6():
                 y += 45
                 pygame.display.flip()
                 clock.tick(60)
-
-                
- 
 
     def build():
         myx = 0
@@ -1096,10 +1092,10 @@ def livello_6():
     
     game_over = pygame.mixer.Sound("img/Game Over.wav")
     font = pygame.font.SysFont("brittanic", 25)
-    scritta1 = font.render("Schiva più blocchi che puoi !!!", True, BLACK)
-    scritta2 = font.render("Premi spazio ed il gioco inizierà!!!", True, BLACK)
-    scritta3 = font.render("MENU", False, WHITE)
-    scritta4 = font.render("CLASSIFICA", True, WHITE)
+    testo1 = font.render("Schiva più blocchi che puoi !!!", True, BLACK)
+    testo2 = font.render("Premi spazio ed il gioco inizierà!!!", True, BLACK)
+    testo3 = font.render("MENU", False, WHITE)
+    testo4 = font.render("CLASSIFICA", True, WHITE)
     clock = pygame.time.Clock()
 
     player.rect.x = 150
@@ -1124,7 +1120,7 @@ def livello_6():
                 exit()
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE :
-                    if alive == False:
+                    if not alive:
                         alive = True
                         all_sprites_list.add(player)
                         z = 1
@@ -1137,6 +1133,7 @@ def livello_6():
                     player.move_y = 0
                 if event.key == pygame.K_s:
                     player.move_y = 0
+
         all_sprites_list.update()
         
         n = random.randrange(15)
@@ -1161,7 +1158,7 @@ def livello_6():
                 v = 0
                 s = -1
                 if s == -1:
-                    punteggi.append(str(score) +" - "+ str(tempo))
+                    punteggi.append(str(score))
                     s = 0
                     score = 0
                 z = -1
@@ -1173,26 +1170,26 @@ def livello_6():
         plats.update()
 
         if not alive:
-            screen.blit(scritta2,(100, 30))
+            screen.blit(testo2,(100, 30))
             pulsante = pygame.Rect((250, 500), (120, 70))
             pulsante1 = pygame.Rect((600, 500), (120, 70))
             screen.fill((0, 0, 0), pulsante)
             screen.fill((0, 0, 0), pulsante1)
-            screen.blit(scritta3,(285, 525))
-            screen.blit(scritta4,(610, 525))
+            screen.blit(testo3,(285, 525))
+            screen.blit(testo4,(610, 525))
 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1:  
-                    Button(event.pos, pulsante)
-                    Button1(event.pos, pulsante1, punteggi)
+                    Button_menu(event.pos, pulsante)
+                    Button_classifica(event.pos, pulsante1, punteggi)
 
         else:
-            screen.blit(scritta1,(100, 30))
+            screen.blit(testo1,(100, 30))
         pygame.display.flip()
         pygame.display.set_caption("Le avventure di Ben, azione : livello 3" + "  Score: " + str(score))
         clock.tick(60)
 
-menu(SFONDO, screen, WHITE, livello_1, livello_4)
+menu(SFONDO, screen, WHITE, livello_1, livello_6)
 
 '''
 cercare di ridurre al minimo gli errori di vs 
