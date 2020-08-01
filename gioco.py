@@ -784,7 +784,7 @@ def livello_4():
                 block_list.remove(blocco)
                 all_sprites_list.remove(blocco)  
 
-        for blocco in morte_list:
+        for morte in morte_list:
             morte_hit_list = pygame.sprite.spritecollide(player, morte_list, True)
             for giocatore in morte_hit_list:
                 crash.play()
@@ -792,6 +792,9 @@ def livello_4():
                 morte_list = []
                 morte_list = pygame.sprite.Group()
                 score = 0      
+            if morte.rect.y > 640:
+                morte_list.remove(morte)
+                all_sprites_list.remove(morte)      
                 
         if score == 30:
             all_sprites_list.remove(player, block_list, morte_list)
