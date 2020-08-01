@@ -23,7 +23,9 @@ testo6 = font1.render("A CUI VUOI GIOCARE!", True, BLACK)
 def menu(SFONDO, screen, WHITE, livello_1, livello_4):
     pygame.display.set_caption("Le avventure di Ben")
 
+    
     while True:
+        
         pygame.display.update()
         screen.blit(SFONDO, (0, 0))
         Blocco = pygame.draw.rect(screen, (WHITE),(247, 97, 404, 100))
@@ -47,8 +49,9 @@ def menu(SFONDO, screen, WHITE, livello_1, livello_4):
         screen.blit(testo5, (250, 100))
         screen.blit(testo6, (250, 160))
 
-
 def livello_1():
+    
+    
     pygame.init()
 
     screen = pygame.display.set_mode((900,700), 0, 32)
@@ -60,7 +63,6 @@ def livello_1():
     draw = pygame.sprite.Group()
     plats = pygame.sprite.Group()
     all_sprites_list = pygame.sprite.Group()
-
 
     class Block(pygame.sprite.Sprite):
         def __init__(self):
@@ -192,7 +194,6 @@ def livello_1():
             myy += 20
             myx = 0
 
-
     def gravity():
         if not player.onground:
             player.move_y += 1
@@ -202,12 +203,12 @@ def livello_1():
     block = Block()
     all_sprites_list.add(block)
 
-
     font = pygame.font.SysFont("brittanic", 30)
     font1 = pygame.font.SysFont("brittanic", 20)
     testo1 = font.render("Raggiungi l'uscita, stai attento !", True, BLACK)
     testo2 = font1.render("EXIT", True, BLACK)
 
+    
     while True:
 
         screen.fill(WHITE)
@@ -246,6 +247,8 @@ def livello_1():
         clock.tick(60)
 
 def livello_2():
+    
+    
     pygame.init()
 
     screen = pygame.display.set_mode((900,700), 0, 32)
@@ -257,8 +260,7 @@ def livello_2():
     draw = pygame.sprite.Group()
     plats = pygame.sprite.Group()
     all_sprites_list = pygame.sprite.Group()
-
-
+    
     class Block(pygame.sprite.Sprite):
         def __init__(self):
             super().__init__()
@@ -389,7 +391,6 @@ def livello_2():
             myy += 20
             myx = 0
 
-
     def gravity():
         if not player.onground:
             player.move_y += 1
@@ -404,6 +405,7 @@ def livello_2():
     testo1 = font.render("VAI SUBITO ALL'USCITA! GUARDATI ATTORNO! ", True, BLACK)
     testo2 = font1.render("EXIT", True, BLACK)
 
+    
     while True:
 
         screen.fill(WHITE)
@@ -431,7 +433,6 @@ def livello_2():
         if  len(morte_hit_list) > 0:
             livello_3()
 
-
         draw.update()
         plats.update()
         all_sprites_list.draw(screen)
@@ -442,8 +443,10 @@ def livello_2():
         clock.tick(60)
 
 def livello_3():
+    
+    
     pygame.init()
-
+    
     screen = pygame.display.set_mode((900,700), 0, 32)
     clock = pygame.time.Clock()
     BLACK = (0, 0, 0)
@@ -454,7 +457,6 @@ def livello_3():
     draw = pygame.sprite.Group()
     plats = pygame.sprite.Group()
     all_sprites_list = pygame.sprite.Group()
-
 
     class Block(pygame.sprite.Sprite):
         def __init__(self):
@@ -625,13 +627,14 @@ def livello_3():
     block = Block()
     all_sprites_list.add(block)
 
-
     font = pygame.font.SysFont("brittanic", 30)
     testo1 = font.render("S P E C C H I O ? ? ?", True, BLACK)
     font1 = pygame.font.SysFont("brittanic", 20)
     testo2 = font1.render("EXIT", True, BLACK)
 
+    
     while True:
+        
         screen.fill(WHITE)
         gravity()
 
@@ -657,7 +660,6 @@ def livello_3():
         if  len(morte_hit_list) > 0:
             menu(SFONDO, screen, WHITE, livello_1, livello_4)
 
-
         screen.blit(testo1,(230, 50))
         screen.blit(testo2,(7, 250))
         draw.update()
@@ -668,6 +670,7 @@ def livello_3():
         clock.tick(60)
 
 def livello_4():
+    
     BLACK = (0, 0, 0)
     WHITE = (255, 255, 255)
     RED = (255, 0, 0)
@@ -698,7 +701,7 @@ def livello_4():
             self.image = pygame.Surface([35, 20])
             self.image.fill(color)
             self.rect = self.image.get_rect()
-
+            
         def update(self):
             self.rect.y += 2
             
@@ -735,6 +738,7 @@ def livello_4():
 
     player.rect.y = 630
 
+    
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT: 
@@ -844,6 +848,7 @@ def livello_5():
         def update(self):
             self.rect.y -= 8
 
+            
     pygame.init()
     pygame.mixer.init()
 
@@ -871,6 +876,7 @@ def livello_5():
     score = 0
     player.rect.y = 630
 
+    
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT: 
@@ -1018,11 +1024,11 @@ def livello_6():
 
             pygame.init()
             clock = pygame.time.Clock()
-
             testo = font.render(str(n), True, BLACK)
             screen.fill(WHITE)
             screen.blit(testo, (x, y))
 
+            
             while True:
                 for event in pygame.event.get():
                     if event.type == pygame.QUIT:  
