@@ -943,8 +943,10 @@ def livello_6():
     score = 0
     alive = True
     z = 1
-    x = 30
+    x = 100
     e = 1
+    spawn = 15
+    m = 0
     classifica = []
     punteggi = []
 
@@ -1084,10 +1086,15 @@ def livello_6():
     
     game_over = pygame.mixer.Sound("img/Game Over.wav")
     font = pygame.font.SysFont("brittanic", 25)
+    font1 = pygame.font.SysFont("brittanic", 30)
+    font2 = pygame.font.SysFont("brittanic", 40)
+
     testo1 = font.render("Schiva più blocchi che puoi !!!", True, BLACK)
-    testo2 = font.render("Premi spazio ed il gioco inizierà!!!", True, BLACK)
+    testo2 = font2.render("Premi spazio ed il gioco inizierà!!!", True, BLACK)
     testo3 = font.render("CLASSIFICA", False, WHITE)
     testo4 = font.render("MENU", True, WHITE)
+    testo5 = font1.render("Ecco i tuoi punteggi migliori!!!", True, BLACK)
+
     clock = pygame.time.Clock()
 
     player.rect.x = 150
@@ -1097,6 +1104,13 @@ def livello_6():
     while True: 
 
         if alive:
+            m += 1
+            if m ==3000:
+                if spawn < 7 :
+                    spawn -= 2
+                m= 0
+
+
             s += 1
             if s ==10:
                 score += 1
@@ -1130,7 +1144,7 @@ def livello_6():
 
         all_sprites_list.update()
         
-        n = random.randrange(15)
+        n = random.randrange(spawn)
 
         if n == z:
             morte = Block(BLACK)
@@ -1180,6 +1194,7 @@ def livello_6():
                     Button_menu(event.pos, pulsante2)
                     
             if len(classifica) == 1 :
+                screen.blit(testo5,(60, 100))
                 classifica.append("")
                 y = 170 
                 
@@ -1188,7 +1203,7 @@ def livello_6():
                 
                 for n in punteggi:
                     if e <= 5 :
-                        testo = font.render(str(e) + ". " + str(n), True, BLACK)
+                        testo = font2.render(str(e) + ". " + str(n), True, BLACK)
                         screen.blit(testo, (x, y))
                         y += 45
                         e += 1        
@@ -1202,8 +1217,6 @@ def livello_6():
         pygame.display.set_caption("Le avventure di Ben, azione : livello 3" + "  Score: " + str(score))
         clock.tick(60)
 
-menu(SFONDO, screen, WHITE, livello_1, livello_4)
+menu(SFONDO, screen, WHITE, livello_1, livello_6)
 
-'''
-cercare di ridurre al minimo gli errori di vs 
-'''
+#cercare di ridurre al minimo gli errori di vs 
