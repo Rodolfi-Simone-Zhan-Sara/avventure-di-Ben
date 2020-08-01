@@ -1,6 +1,6 @@
 import pygame
 import random
-import time
+
 
 pygame.init()
 
@@ -97,7 +97,6 @@ def livello_1():
         def update(self):
             screen.blit(self.image, (self.rect.x, self.rect.y))
 
-
     class Player(pygame.sprite.Sprite):
         move_x = 0
         move_y = 0
@@ -117,7 +116,6 @@ def livello_1():
             self.rect.y += self.move_y
             ycoll()
             screen.blit(self.image, (self.rect.x, self.rect.y))
-
 
     def xcoll():
         collision = pygame.sprite.spritecollide(player, plats, False)
@@ -451,7 +449,7 @@ def livello_3():
     clock = pygame.time.Clock()
     BLACK = (0, 0, 0)
     WHITE = (255, 255, 255)
-    VETRO = (100, 149, 210)
+    GLASS = (100, 149, 210)
     Ben = pygame.image.load("img/ben2.png")
     BEN = pygame.transform.scale(Ben,(50, 55))
     draw = pygame.sprite.Group()
@@ -512,7 +510,7 @@ def livello_3():
         def __init__(self,x,y):
             pygame.sprite.Sprite.__init__(self)
             self.image = pygame.Surface((7, 25))
-            self.image.fill(VETRO)
+            self.image.fill(GLASS)
             self.rect = self.image.get_rect()
             self.rect.x = x
             self.rect.y = y
@@ -790,10 +788,9 @@ def livello_4():
             for giocatore in morte_hit_list:
                 crash.play()
                 all_sprites_list.remove(block_list, morte_list)
-                morte_list = [ ]
+                morte_list = []
                 morte_list = pygame.sprite.Group()
-                score = 0
-    
+                score = 0      
                 
         if score == 30:
             all_sprites_list.remove(player, block_list, morte_list)
@@ -837,7 +834,6 @@ def livello_5():
             self.rect.x += self.move_x
             self.rect.y += self.move_y
             screen.blit(self.image, (self.rect.x, self.rect.y))
-
     
     class Bullet(pygame.sprite.Sprite):
         def __init__(self):
@@ -944,9 +940,6 @@ def livello_6():
     tempo = time.asctime( time.localtime(time.time()) )
     punteggi = []
 
-
-
-
     all_sprites_list = pygame.sprite.Group()
     morte_list = pygame.sprite.Group()
     draw = pygame.sprite.Group()
@@ -1036,8 +1029,6 @@ def livello_6():
                     if event.type == pygame.QUIT:  
                         exit()
 
-
-
                 y += 45
                 pygame.display.flip()
                 clock.tick(60)
@@ -1115,7 +1106,6 @@ def livello_6():
     player.rect.y = (screen_height / 2) - 30
 
 
-
     while True: 
 
         if alive:
@@ -1181,6 +1171,7 @@ def livello_6():
         screen.fill(WHITE)
         all_sprites_list.draw(screen)
         plats.update()
+
         if not alive:
             screen.blit(scritta2,(100, 30))
             pulsante = pygame.Rect((250, 500), (120, 70))
@@ -1194,7 +1185,7 @@ def livello_6():
                 if event.button == 1:  
                     Button(event.pos, pulsante)
                     Button1(event.pos, pulsante1, punteggi)
-                    print (score)
+
         else:
             screen.blit(scritta1,(100, 30))
         pygame.display.flip()
@@ -1206,5 +1197,6 @@ menu(SFONDO, screen, WHITE, livello_1, livello_4)
 '''
 cercare di ridurre al minimo gli errori di vs 
 idee per migliorare:
-    nel livello 6 una classifica sui tuoi score + data e ora
+    nel livello 6 una classifica sui tuoi record
+    pioggia: rossi non toccare per terra, scomparire prima
 '''
