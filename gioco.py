@@ -1199,7 +1199,7 @@ def livello_6():
             screen.blit(scritta1,(100, 30))
         pygame.display.flip()
         pygame.display.set_caption("Le avventure di Ben, azione : livello 3" + "  Score: " + str(score))
-        clock.tick(500)
+        clock.tick(60)
 
 menu(SFONDO, screen, WHITE, livello_1, livello_4)
 
