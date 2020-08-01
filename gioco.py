@@ -1166,13 +1166,13 @@ def livello_6():
 
         if not alive:
             if len(classifica) < 1 :
-                screen.blit(scritta2,(100, 30))
+                screen.blit(testo2,(100, 30))
                 pulsante1 = pygame.Rect((250, 500), (120, 70))
                 pulsante2 = pygame.Rect((600, 500), (120, 70))
                 screen.fill((0, 0, 0), pulsante1)
                 screen.fill((0, 0, 0), pulsante2)
-                screen.blit(scritta3,(260, 525))
-                screen.blit(scritta4,(640, 525))
+                screen.blit(testo3,(260, 525))
+                screen.blit(testo4,(640, 525))
 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1:  
@@ -1188,8 +1188,8 @@ def livello_6():
                 
                 for n in punteggi:
                     if e <= 5 :
-                        scritta = font.render(str(e) + ". " + str(n), True, BLACK)
-                        screen.blit(scritta, (x, y))
+                        testo = font.render(str(e) + ". " + str(n), True, BLACK)
+                        screen.blit(testo, (x, y))
                         y += 45
                         e += 1        
                 pulsante3 = pygame.Rect((250, 500), (120, 70))
@@ -1206,5 +1206,4 @@ menu(SFONDO, screen, WHITE, livello_1, livello_4)
 
 '''
 cercare di ridurre al minimo gli errori di vs 
-
 '''
