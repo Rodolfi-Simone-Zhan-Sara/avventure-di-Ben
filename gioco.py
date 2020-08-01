@@ -1086,8 +1086,8 @@ def livello_6():
     font = pygame.font.SysFont("brittanic", 25)
     testo1 = font.render("Schiva più blocchi che puoi !!!", True, BLACK)
     testo2 = font.render("Premi spazio ed il gioco inizierà!!!", True, BLACK)
-    testo3 = font.render("MENU", False, WHITE)
-    testo4 = font.render("CLASSIFICA", True, WHITE)
+    testo3 = font.render("CLASSIFICA", False, WHITE)
+    testo4 = font.render("MENU", True, WHITE)
     clock = pygame.time.Clock()
 
     player.rect.x = 150
