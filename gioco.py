@@ -945,8 +945,8 @@ def livello_6():
     z = 1
     x = 100
     e = 1
-    spawn = 15
     m = 0
+    spawn = 15
     classifica = []
     punteggi = []
 
@@ -1106,7 +1106,7 @@ def livello_6():
         if alive:
             m += 1
             if m ==3000:
-                if spawn < 7 :
+                if spawn > 7:
                     spawn -= 2
                 m= 0
 
@@ -1164,6 +1164,8 @@ def livello_6():
                 alive = False
                 velocita = 2
                 v = 0
+                m = 0
+                spawn = 15
                 s = -1
                 if s == -1:
                     punteggi.append(str(score))
@@ -1198,7 +1200,7 @@ def livello_6():
                 classifica.append("")
                 y = 170 
                 
-                punteggi.sort ()
+                punteggi.sort (key=int)
                 punteggi.reverse ()
                 
                 for n in punteggi:
