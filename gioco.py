@@ -946,6 +946,7 @@ def livello_6():
 
 
 
+
     all_sprites_list = pygame.sprite.Group()
     morte_list = pygame.sprite.Group()
     draw = pygame.sprite.Group()
@@ -1017,47 +1018,32 @@ def livello_6():
         if rect.collidepoint(cur):
             menu(SFONDO, screen, WHITE, livello_1, livello_4)              
 
-    def Button1(cur, rect):
+    def Button1(cur, rect, punteggi):
         if rect.collidepoint(cur):
-            classifica(punteggi)
+            font = pygame.font.SysFont("brittanic", 50)
+            x = 30
+            y = 30
 
-    def classifica(punteggi):
-        screen = pygame.display.set_mode((900, 700))
-        WHITE = (255, 255, 255)
-        BLACK = (0, 0, 0)
+            pygame.init()
+            clock = pygame.time.Clock()
 
-        x = 20
-        y = 20
-        pygame.init()
-        font = pygame.font.SysFont("brittanic", 50)
-        ciclo = True
-
-        clock = pygame.time.Clock()
-
-        while ciclo: 
-            x = 20
-            y = 20
-
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:  
-                    exit()
-
+            scritta1 = font.render(str(n), True, BLACK)
             screen.fill(WHITE)
+            screen.blit(scritta1, (x, y))
 
-            for n in punteggi:
-
-                scritta1 = font.render(str(n), True, BLACK)
-                screen.blit(scritta1, (x, y))
-                y += 20
-                if y ==  680:
-                    x += 150
-                    y = 20
-
-            pygame.display.flip()
-            pygame.display.set_caption("Le avventure di Ben, azione : livello 3" + "  Score: " + str(score))
-            clock.tick(60)
+            while True:
+                for event in pygame.event.get():
+                    if event.type == pygame.QUIT:  
+                        exit()
 
 
+
+                y += 45
+                pygame.display.flip()
+                clock.tick(60)
+
+                
+ 
 
     def build():
         myx = 0
@@ -1185,7 +1171,7 @@ def livello_6():
                 v = 0
                 s = -1
                 if s == -1:
-                    punteggi.append(str(score))
+                    punteggi.append(str(score) +" - "+ str(tempo))
                     s = 0
                     score = 0
                 z = -1
@@ -1207,13 +1193,13 @@ def livello_6():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1:  
                     Button(event.pos, pulsante)
-                    Button1(event.pos, pulsante1)
+                    Button1(event.pos, pulsante1, punteggi)
                     print (score)
         else:
             screen.blit(scritta1,(100, 30))
         pygame.display.flip()
         pygame.display.set_caption("Le avventure di Ben, azione : livello 3" + "  Score: " + str(score))
-        clock.tick(60)
+        clock.tick(500)
 
 menu(SFONDO, screen, WHITE, livello_1, livello_4)
 
