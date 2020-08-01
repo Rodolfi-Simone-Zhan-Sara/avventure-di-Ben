@@ -1217,6 +1217,6 @@ def livello_6():
         pygame.display.set_caption("Le avventure di Ben, azione : livello 3" + "  Score: " + str(score))
         clock.tick(60)
 
-menu(SFONDO, screen, WHITE, livello_1, livello_6)
+menu(SFONDO, screen, WHITE, livello_1, livello_4)
 
 #cercare di ridurre al minimo gli errori di vs 
