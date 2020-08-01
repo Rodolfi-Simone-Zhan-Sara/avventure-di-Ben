@@ -1,7 +1,6 @@
 import pygame
 import random
 
-
 pygame.init()
 
 screen = pygame.display.set_mode((900, 700))
@@ -944,6 +943,9 @@ def livello_6():
     score = 0
     alive = True
     z = 1
+    x = 30
+    e = 1
+    classifica = []
     punteggi = []
 
     all_sprites_list = pygame.sprite.Group()
@@ -1014,32 +1016,13 @@ def livello_6():
                 player.rect.bottom = block.rect.top
                 player.onground = True
 
+    def Button_classifica(cur, rect):
+        if rect.collidepoint(cur):
+            classifica.append("funziona!!")    
+
     def Button_menu(cur, rect):
         if rect.collidepoint(cur):
             menu(SFONDO, screen, WHITE, livello_1, livello_4)              
-
-    def Button_classifica(cur, rect, punteggi):
-        if rect.collidepoint(cur):
-            font = pygame.font.SysFont("brittanic", 50)
-            x = 30
-            y = 30
-
-
-            pygame.init()
-            clock = pygame.time.Clock()
-            testo = font.render(str(n), True, BLACK)
-            screen.fill(WHITE)
-            screen.blit(testo, (x, y))
-
-            
-            while True:
-                for event in pygame.event.get():
-                    if event.type == pygame.QUIT:  
-                        exit()
-
-                y += 45
-                pygame.display.flip()
-                clock.tick(60)
 
     def build():
         myx = 0
@@ -1131,6 +1114,8 @@ def livello_6():
                 if event.key == pygame.K_SPACE :
                     if not alive:
                         alive = True
+                        classifica = []
+                        e = 1
                         all_sprites_list.add(player)
                         z = 1
                 if event.key == pygame.K_w:   
@@ -1174,26 +1159,45 @@ def livello_6():
             if blocco.rect.x < 50:
                 all_sprites_list.remove(blocco)		
                 
-        screen.fill(WHITE)
-        all_sprites_list.draw(screen)
-        plats.update()
+        if len(classifica) < 1 :        
+            screen.fill(WHITE)
+            all_sprites_list.draw(screen)
+            plats.update()
 
         if not alive:
-            screen.blit(testo2,(100, 30))
-            pulsante = pygame.Rect((250, 500), (120, 70))
-            pulsante1 = pygame.Rect((600, 500), (120, 70))
-            screen.fill((0, 0, 0), pulsante)
-            screen.fill((0, 0, 0), pulsante1)
-            screen.blit(testo3,(285, 525))
-            screen.blit(testo4,(610, 525))
+            if len(classifica) < 1 :
+                screen.blit(scritta2,(100, 30))
+                pulsante1 = pygame.Rect((250, 500), (120, 70))
+                pulsante2 = pygame.Rect((600, 500), (120, 70))
+                screen.fill((0, 0, 0), pulsante1)
+                screen.fill((0, 0, 0), pulsante2)
+                screen.blit(scritta3,(260, 525))
+                screen.blit(scritta4,(640, 525))
 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1:  
-                    Button_menu(event.pos, pulsante)
-                    Button_classifica(event.pos, pulsante1, punteggi)
-
+                    Button_classifica(event.pos, pulsante1)
+                    Button_menu(event.pos, pulsante2)
+                    
+            if len(classifica) == 1 :
+                classifica.append("")
+                y = 170 
+                
+                punteggi.sort ()
+                punteggi.reverse ()
+                
+                for n in punteggi:
+                    if e <= 5 :
+                        scritta = font.render(str(e) + ". " + str(n), True, BLACK)
+                        screen.blit(scritta, (x, y))
+                        y += 45
+                        e += 1        
+                pulsante3 = pygame.Rect((250, 500), (120, 70))
+                screen.fill((255, 255, 255), pulsante3)    
+                
         else:
             screen.blit(testo1,(100, 30))
+
         pygame.display.flip()
         pygame.display.set_caption("Le avventure di Ben, azione : livello 3" + "  Score: " + str(score))
         clock.tick(60)
@@ -1202,7 +1206,5 @@ menu(SFONDO, screen, WHITE, livello_1, livello_4)
 
 '''
 cercare di ridurre al minimo gli errori di vs 
-idee per migliorare:
-    nel livello 6 una classifica sui tuoi record
-    pioggia: rossi non toccare per terra, scomparire prima
+
 '''
