@@ -6,28 +6,50 @@ pygame.init()
 screen = pygame.display.set_mode((900, 700))
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
+GOLD = (218, 165, 32)
 
+congratulazioni = []
 sfondo = pygame.image.load("img/sfondo.jpg")
 SFONDO = pygame.transform.scale(sfondo,(900, 700))
 clock = pygame.time.Clock()
 font = pygame.font.SysFont("brittanic", 45)
 font1 = pygame.font.SysFont("brittanic", 53)
+font2 = pygame.font.SysFont("brittanic", 23)
 testo1 = font.render("Giochi ", True, BLACK)
 testo2 = font.render("d'azione", True, BLACK)
 testo3 = font.render("Giochi", True, BLACK)
 testo4 = font.render("d'abilità", True, BLACK)
 testo5 = font1.render("SCEGLI LA MODALITÀ ", True, BLACK)
 testo6 = font1.render("A CUI VUOI GIOCARE!", True, BLACK)
+testo7 =  font2.render("Congratulazioni !!!", True, WHITE)
+testo8 =  font2.render("hai finito il nostro", True, WHITE)
+testo9 =  font2.render("livello-Parkuor", True, WHITE)
 
-def menu(SFONDO, screen, WHITE, livello_1, livello_4):
+
+def menu(SFONDO, screen, WHITE, livello_1, livello_4, congratulazioni):
     pygame.display.set_caption("Le avventure di Ben")
-
+    c = 0
     
     while True:
-        
         pygame.display.update()
-        screen.blit(SFONDO, (0, 0))
-        Blocco = pygame.draw.rect(screen, (WHITE),(247, 97, 404, 100))
+
+        if len(congratulazioni) >= 1:
+            c += 1
+            pygame.draw.rect(screen, (GOLD), (750, 97, 150, 80))
+            screen.blit(testo7, (760, 97))
+            screen.blit(testo8, (770, 122))
+            screen.blit(testo9, (770, 147))
+
+            if c == 100:
+                congratulazioni.append("winner")
+        if len(congratulazioni) != 2:
+            screen.blit(SFONDO, (0, 0))
+        if len(congratulazioni) == 2:
+            if c == 1500:
+                congratulazioni.append("troll") 
+        
+
+        pygame.draw.rect(screen, (WHITE),(247, 97, 404, 100))
         pulsante_azione = pygame.draw.rect(screen, (WHITE),(100, 450, 250, 200))
         pulsante_abilita = pygame.draw.rect(screen, (WHITE),(550, 450, 250, 200))
         for event in pygame.event.get():
@@ -657,7 +679,8 @@ def livello_3():
 
         morte_hit_list = pygame.sprite.spritecollide(player, all_sprites_list, True)
         if  len(morte_hit_list) > 0:
-            menu(SFONDO, screen, WHITE, livello_1, livello_4)
+            congratulazioni.append("vittoria")
+            menu(SFONDO, screen, WHITE, livello_1, livello_4, congratulazioni)
 
         screen.blit(testo1,(230, 50))
         screen.blit(testo2,(7, 250))
@@ -1024,7 +1047,7 @@ def livello_6():
 
     def Button_menu(cur, rect):
         if rect.collidepoint(cur):
-            menu(SFONDO, screen, WHITE, livello_1, livello_4)              
+            menu(SFONDO, screen, WHITE, livello_1, livello_4, congratulazioni)              
 
     def build():
         myx = 0
@@ -1219,7 +1242,7 @@ def livello_6():
         pygame.display.set_caption("Le avventure di Ben, azione : livello 3" + "  Score: " + str(score))
         clock.tick(60)
 
-menu(SFONDO, screen, WHITE, livello_1, livello_4)
+menu(SFONDO, screen, WHITE, livello_1, livello_4, congratulazioni)
 
 '''
 cercare di ridurre al minimo gli errori di vs 
