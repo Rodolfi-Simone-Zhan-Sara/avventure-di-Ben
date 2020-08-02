@@ -49,13 +49,12 @@ def menu(SFONDO, screen, WHITE, livello_1, livello_4, congratulazioni):
 
         if len(congratulazioni) != 2:
             screen.blit(SFONDO, (0, 0))
+            notifica.stop()
 
         if len(congratulazioni) == 2:
-            notifica.stop()
             if c == 1500:
                 congratulazioni.append("troll") 
         
-
         pygame.draw.rect(screen, (WHITE),(247, 97, 404, 100))
         pulsante_azione = pygame.draw.rect(screen, (WHITE),(100, 450, 250, 200))
         pulsante_abilita = pygame.draw.rect(screen, (WHITE),(550, 450, 250, 200))
@@ -1250,6 +1249,6 @@ def livello_6():
         pygame.display.set_caption("Le avventure di Ben, azione : livello 3" + "  Score: " + str(score))
         clock.tick(60)
 
-menu(SFONDO, screen, WHITE, livello_1, livello_4, congratulazioni)
+menu(SFONDO, screen, WHITE, livello_3, livello_4, congratulazioni)
 
 # cercare di ridurre gli errori di vs
