@@ -1182,7 +1182,7 @@ def livello_6():
 
         if not alive:
             if len(classifica) < 1 :
-                screen.blit(testo2,(100, 30))
+                screen.blit(testo2,(100, 50))
                 pulsante1 = pygame.Rect((250, 500), (120, 70))
                 pulsante2 = pygame.Rect((600, 500), (120, 70))
                 screen.fill((0, 0, 0), pulsante1)
@@ -1196,7 +1196,7 @@ def livello_6():
                     Button_menu(event.pos, pulsante2)
                     
             if len(classifica) == 1 :
-                screen.blit(testo5,(60, 100))
+                screen.blit(testo5,(60, 120))
                 classifica.append("")
                 y = 170 
                 
@@ -1219,6 +1219,9 @@ def livello_6():
         pygame.display.set_caption("Le avventure di Ben, azione : livello 3" + "  Score: " + str(score))
         clock.tick(60)
 
-menu(SFONDO, screen, WHITE, livello_1, livello_4)
+menu(SFONDO, screen, WHITE, livello_1, livello_6)
 
-#cercare di ridurre al minimo gli errori di vs 
+'''
+cercare di ridurre al minimo gli errori di vs 
+schermata di congratulazioni
+'''
