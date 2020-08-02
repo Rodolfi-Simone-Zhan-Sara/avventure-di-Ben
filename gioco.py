@@ -23,28 +23,35 @@ testo5 = font1.render("SCEGLI LA MODALITÀ ", True, BLACK)
 testo6 = font1.render("A CUI VUOI GIOCARE!", True, BLACK)
 testo7 =  font2.render("Congratulazioni !!!", True, WHITE)
 testo8 =  font2.render("hai finito il nostro", True, WHITE)
-testo9 =  font2.render("livello-Parkuor", True, WHITE)
+testo9 =  font2.render("livello - Parkuor", True, WHITE)
 
 
 def menu(SFONDO, screen, WHITE, livello_1, livello_4, congratulazioni):
     pygame.display.set_caption("Le avventure di Ben")
+    pygame.mixer.init()
+
+    notifica = pygame.mixer.Sound("img/congratulazioni.wav")
     c = 0
     
     while True:
         pygame.display.update()
-
+        
         if len(congratulazioni) >= 1:
             c += 1
+            notifica.play()
             pygame.draw.rect(screen, (GOLD), (750, 97, 150, 80))
-            screen.blit(testo7, (760, 97))
-            screen.blit(testo8, (770, 122))
-            screen.blit(testo9, (770, 147))
+            screen.blit(testo7, (760, 105))
+            screen.blit(testo8, (765, 130))
+            screen.blit(testo9, (770, 155))
 
             if c == 100:
                 congratulazioni.append("winner")
+
         if len(congratulazioni) != 2:
             screen.blit(SFONDO, (0, 0))
+
         if len(congratulazioni) == 2:
+            notifica.stop()
             if c == 1500:
                 congratulazioni.append("troll") 
         
@@ -271,6 +278,7 @@ def livello_2():
     
     
     pygame.init()
+    pygame.mixer.init()
 
     screen = pygame.display.set_mode((900,700), 0, 32)
     clock = pygame.time.Clock()
@@ -467,7 +475,7 @@ def livello_3():
     
     
     pygame.init()
-    
+
     screen = pygame.display.set_mode((900,700), 0, 32)
     clock = pygame.time.Clock()
     BLACK = (0, 0, 0)
@@ -1244,7 +1252,4 @@ def livello_6():
 
 menu(SFONDO, screen, WHITE, livello_1, livello_4, congratulazioni)
 
-'''
-cercare di ridurre al minimo gli errori di vs 
-schermata di congratulazioni
-'''
+# cercare di ridurre gli errori di vs
