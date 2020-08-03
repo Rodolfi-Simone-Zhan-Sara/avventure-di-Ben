@@ -1231,5 +1231,3 @@ def livello_6():
 
 
 menu(SFONDO, screen, livello_1, livello_4, congratulazioni)
-
-# cercare di ridurre gli errori di vs
