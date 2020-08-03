@@ -35,7 +35,6 @@ def menu(SFONDO, screen, WHITE, livello_1, livello_4, congratulazioni):
     
     while True:
         pygame.display.update()
-        print (c)
         if len(congratulazioni) == 1 :
             c += 1
             pygame.draw.rect(screen, (GOLD), (750, 97, 150, 80))
