@@ -26,7 +26,7 @@ testo8 =  font2.render("hai finito il nostro", True, WHITE)
 testo9 =  font2.render("livello - Parkuor", True, WHITE)
 
 
-def menu(SFONDO, screen, WHITE, livello_1, livello_4, congratulazioni):
+def menu(SFONDO, screen, livello_1, livello_4, congratulazioni):
     pygame.display.set_caption("Le avventure di Ben")
     pygame.mixer.init()
 
@@ -80,10 +80,6 @@ def livello_1():
     
     pygame.init()
 
-    screen = pygame.display.set_mode((900,700), 0, 32)
-    clock = pygame.time.Clock()
-    BLACK = (0, 0, 0)
-    WHITE = (255, 255, 255)
     Ben = pygame.image.load("img/ben2.png")
     BEN = pygame.transform.scale(Ben,(52, 55))
     draw = pygame.sprite.Group()
@@ -213,9 +209,9 @@ def livello_1():
                 if c == ' ':
                     pass
                 elif c == '-':
-                    p = Platform1(myx,myy)
+                    Platform1(myx,myy)
                 elif c == '#':
-                    p = Platform(myx,myy)
+                    Platform(myx,myy)
                 myx += 20
             myy += 20
             myx = 0
@@ -278,10 +274,7 @@ def livello_2():
     pygame.init()
     pygame.mixer.init()
 
-    screen = pygame.display.set_mode((900,700), 0, 32)
-    clock = pygame.time.Clock()
-    BLACK = (0, 0, 0)
-    WHITE = (255, 255, 255)
+
     Ben = pygame.image.load("img/ben2.png")
     BEN = pygame.transform.scale(Ben,(52, 55))
     draw = pygame.sprite.Group()
@@ -411,9 +404,9 @@ def livello_2():
                 if c == ' ':
                     pass
                 elif c == '-':
-                    p = Platform1(myx,myy)
+                    Platform1(myx,myy)
                 elif c == '#':
-                    p = Platform(myx,myy)
+                    Platform(myx,myy)
                 myx += 20
             myy += 20
             myx = 0
@@ -474,10 +467,7 @@ def livello_3():
     
     pygame.init()
 
-    screen = pygame.display.set_mode((900,700), 0, 32)
-    clock = pygame.time.Clock()
-    BLACK = (0, 0, 0)
-    WHITE = (255, 255, 255)
+
     GLASS = (100, 149, 210)
     Ben = pygame.image.load("img/ben2.png")
     BEN = pygame.transform.scale(Ben,(50, 55))
@@ -634,13 +624,13 @@ def livello_3():
                 if c == ' ':
                     pass
                 elif c == '-':
-                    plats = Platform1(myx,myy)
+                    Platform1(myx,myy)
                 elif c == ',':
-                    plats = Platform2(myx,myy)
+                    Platform2(myx,myy)
                 elif c == '.':
-                    plats = Platform3(myx,myy)
+                    Platform3(myx,myy)
                 elif c == '#':
-                    plats = Platform(myx,myy)
+                    Platform(myx,myy)
                 myx += 20
             myy += 20
             myx = 0
@@ -686,7 +676,7 @@ def livello_3():
         morte_hit_list = pygame.sprite.spritecollide(player, all_sprites_list, True)
         if  len(morte_hit_list) > 0:
             congratulazioni.append("vittoria")
-            menu(SFONDO, screen, WHITE, livello_1, livello_4, congratulazioni)
+            menu(SFONDO, screen, livello_1, livello_4, congratulazioni)
 
         screen.blit(testo1,(230, 50))
         screen.blit(testo2,(7, 250))
@@ -699,12 +689,8 @@ def livello_3():
 
 def livello_4():
     
-    BLACK = (0, 0, 0)
-    WHITE = (255, 255, 255)
+
     RED = (255, 0, 0)
-    screen_width = 900
-    screen_height = 700
-    screen = pygame.display.set_mode([screen_width, screen_height])
     Cestino = pygame.image.load("img/cestino.png")
     CESTINO = pygame.transform.scale(Cestino,(60, 55))
 
@@ -762,7 +748,6 @@ def livello_4():
     crash = pygame.mixer.Sound("img/Punch.wav")
     font = pygame.font.SysFont("brittanic", 25)
     testo = font.render("Prendi 30 blocchi prima che cadano, ma stai attento a quelli ROSSI!!", True, BLACK)
-    clock = pygame.time.Clock()
 
     player.rect.y = 630
 
@@ -838,8 +823,6 @@ def livello_4():
 
 def livello_5():
 
-    BLACK = (0, 0, 0)
-    WHITE = (255, 255, 255)
 
     draw = pygame.sprite.Group()
 
@@ -883,9 +866,7 @@ def livello_5():
     pygame.init()
     pygame.mixer.init()
 
-    screen_width = 900
-    screen_height = 700
-    screen = pygame.display.set_mode([screen_width, screen_height])
+
     all_sprites_list = pygame.sprite.Group()
     block_list = pygame.sprite.Group()
     bullet_list = pygame.sprite.Group()
@@ -903,7 +884,6 @@ def livello_5():
     font = pygame.font.SysFont("brittanic", 25)
     testo = font.render("SPARA I BLOCCHI, RIESCI AD ARRIVARE A 50 ? ", True, BLACK)
 
-    clock = pygame.time.Clock()
     score = 0
     player.rect.y = 630
 
@@ -1053,7 +1033,7 @@ def livello_6():
 
     def Button_menu(cur, rect):
         if rect.collidepoint(cur):
-            menu(SFONDO, screen, WHITE, livello_1, livello_4, congratulazioni)              
+            menu(SFONDO, screen, livello_1, livello_4, congratulazioni)              
 
     def build():
         myx = 0
@@ -1100,7 +1080,7 @@ def livello_6():
                 if c == ' ':
                     pass
                 elif c == '#':
-                    p = Platform(myx,myy)
+                    Platform(myx,myy)
                 myx += 20
             myy += 20
             myx = 0
@@ -1219,10 +1199,11 @@ def livello_6():
                 screen.blit(testo3,(260, 525))
                 screen.blit(testo4,(637, 525))
 
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                if event.button == 1:  
-                    Button_classifica(event.pos, pulsante1)
-                    Button_menu(event.pos, pulsante2)
+            for event in pygame.event.get():
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    if event.button == 1:  
+                        Button_classifica(event.pos, pulsante1)
+                        Button_menu(event.pos, pulsante2)
                     
             if len(classifica) == 1 :
                 screen.blit(testo5,(60, 120))
@@ -1248,6 +1229,7 @@ def livello_6():
         pygame.display.set_caption("Le avventure di Ben, azione : livello 3" + "  Score: " + str(score))
         clock.tick(60)
 
-menu(SFONDO, screen, WHITE, livello_1, livello_4, congratulazioni)
+
+menu(SFONDO, screen, livello_1, livello_4, congratulazioni)
 
 # cercare di ridurre gli errori di vs
