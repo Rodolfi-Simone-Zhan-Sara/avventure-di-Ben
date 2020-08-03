@@ -35,10 +35,9 @@ def menu(SFONDO, screen, WHITE, livello_1, livello_4, congratulazioni):
     
     while True:
         pygame.display.update()
-        
-        if len(congratulazioni) >= 1:
+        print (c)
+        if len(congratulazioni) == 1 :
             c += 1
-            notifica.play()
             pygame.draw.rect(screen, (GOLD), (750, 97, 150, 80))
             screen.blit(testo7, (760, 105))
             screen.blit(testo8, (765, 130))
@@ -46,13 +45,14 @@ def menu(SFONDO, screen, WHITE, livello_1, livello_4, congratulazioni):
 
             if c == 100:
                 congratulazioni.append("winner")
+                notifica.play ()
 
         if len(congratulazioni) != 2:
             screen.blit(SFONDO, (0, 0))
-            notifica.stop()
 
         if len(congratulazioni) == 2:
-            if c == 1500:
+            c += 1
+            if c == 1000:
                 congratulazioni.append("troll") 
         
         pygame.draw.rect(screen, (WHITE),(247, 97, 404, 100))
