@@ -938,12 +938,6 @@ def livello_5():
     pygame.quit()
 
 def livello_6():
-
-    BLACK = (0, 0, 0)
-    WHITE = (255, 255, 255)
-    screen_width = 900
-    screen_height = 700
-    screen = pygame.display.set_mode([screen_width, screen_height])
     Eroe = pygame.image.load("img/eroe.png")
     EROE = pygame.transform.scale(Eroe,(60, 55))
     velocita = 2.5
@@ -1104,10 +1098,8 @@ def livello_6():
     testo4 = font.render("MENU", True, WHITE)
     testo5 = font1.render("Ecco i tuoi punteggi migliori!!!", True, BLACK)
 
-    clock = pygame.time.Clock()
-
     player.rect.x = 150
-    player.rect.y = (screen_height / 2) - 30
+    player.rect.y = 320
 
 
     while True: 
@@ -1199,11 +1191,10 @@ def livello_6():
                 screen.blit(testo3,(260, 525))
                 screen.blit(testo4,(637, 525))
 
-            for event in pygame.event.get():
-                if event.type == pygame.MOUSEBUTTONDOWN:
-                    if event.button == 1:  
-                        Button_classifica(event.pos, pulsante1)
-                        Button_menu(event.pos, pulsante2)
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if event.button == 1:  
+                    Button_classifica(event.pos, pulsante1)
+                    Button_menu(event.pos, pulsante2)
                     
             if len(classifica) == 1 :
                 screen.blit(testo5,(60, 120))
