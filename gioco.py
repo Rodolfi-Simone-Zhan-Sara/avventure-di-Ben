@@ -882,7 +882,7 @@ def livello_5():
     all_sprites_list.add(player)
     sparo = pygame.mixer.Sound("img/sparo.wav")
     font = pygame.font.SysFont("brittanic", 25)
-    testo = font.render("SPARA I BLOCCHI, RIESCI AD ARRIVARE A 50 ? ", True, BLACK)
+    testo = font.render("SPARA AI BLOCCHI, RIESCI AD ARRIVARE A 50 ? ", True, BLACK)
 
     score = 0
     player.rect.y = 630
