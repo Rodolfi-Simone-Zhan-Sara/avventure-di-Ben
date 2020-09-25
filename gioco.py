@@ -1,5 +1,7 @@
 import pygame
 import random
+import os.path
+filepath = os.path.dirname(__file__)
 
 pygame.init()
 
@@ -9,7 +11,7 @@ BLACK = (0, 0, 0)
 GOLD = (218, 165, 32)
 
 congratulazioni = []
-sfondo = pygame.image.load("img/sfondo.jpg")
+sfondo = pygame.image.load(os.path.join(filepath,"img/sfondo.jpg"))
 SFONDO = pygame.transform.scale(sfondo,(900, 700))
 clock = pygame.time.Clock()
 font = pygame.font.SysFont("brittanic", 45)
@@ -30,7 +32,7 @@ def menu(SFONDO, screen, livello_1, livello_4, congratulazioni):
     pygame.display.set_caption("Le avventure di Ben")
     pygame.mixer.init()
 
-    notifica = pygame.mixer.Sound("img/congratulazioni.wav")
+    notifica = pygame.mixer.Sound(os.path.join(filepath,"img/congratulazioni.wav"))
     c = 0
     
     while True:
@@ -80,7 +82,7 @@ def livello_1():
     
     pygame.init()
 
-    Ben = pygame.image.load("img/ben2.png")
+    Ben = pygame.image.load(os.path.join(filepath,"img/ben2.png"))
     BEN = pygame.transform.scale(Ben,(52, 55))
     draw = pygame.sprite.Group()
     plats = pygame.sprite.Group()
@@ -275,7 +277,7 @@ def livello_2():
     pygame.mixer.init()
 
 
-    Ben = pygame.image.load("img/ben2.png")
+    Ben = pygame.image.load(os.path.join(filepath,"img/ben2.png"))
     BEN = pygame.transform.scale(Ben,(52, 55))
     draw = pygame.sprite.Group()
     plats = pygame.sprite.Group()
@@ -469,7 +471,7 @@ def livello_3():
 
 
     GLASS = (100, 149, 210)
-    Ben = pygame.image.load("img/ben2.png")
+    Ben = pygame.image.load(os.path.join(filepath,"img/ben2.png"))
     BEN = pygame.transform.scale(Ben,(50, 55))
     draw = pygame.sprite.Group()
     plats = pygame.sprite.Group()
@@ -691,7 +693,7 @@ def livello_4():
     
 
     RED = (255, 0, 0)
-    Cestino = pygame.image.load("img/cestino.png")
+    Cestino = pygame.image.load(os.path.join(filepath,"img/cestino.png"))
     CESTINO = pygame.transform.scale(Cestino,(60, 55))
 
     all_sprites_list = pygame.sprite.Group()
@@ -745,7 +747,7 @@ def livello_4():
     player = Player()
     all_sprites_list.add(player)
 
-    crash = pygame.mixer.Sound("img/Punch.wav")
+    crash = pygame.mixer.Sound(os.path.join(filepath,"img/Punch.wav"))
     font = pygame.font.SysFont("brittanic", 25)
     testo = font.render("Prendi 30 blocchi prima che cadano, ma stai attento a quelli ROSSI!!", True, BLACK)
 
@@ -841,7 +843,7 @@ def livello_5():
         def __init__(self):
             super().__init__()
     
-            self.image = pygame.image.load("img/pistola.png")
+            self.image = pygame.image.load(os.path.join(filepath,"img/pistola.png"))
             self.image = pygame.transform.scale(self.image, (60, 60))
             self.rect = self.image.get_rect()
             draw.add(self)
@@ -880,7 +882,7 @@ def livello_5():
 
     player = Player()
     all_sprites_list.add(player)
-    sparo = pygame.mixer.Sound("img/sparo.wav")
+    sparo = pygame.mixer.Sound(os.path.join(filepath,"img/sparo.wav"))
     font = pygame.font.SysFont("brittanic", 25)
     testo = font.render("SPARA AI BLOCCHI, RIESCI AD ARRIVARE A 50 ? ", True, BLACK)
 
@@ -938,7 +940,7 @@ def livello_5():
     pygame.quit()
 
 def livello_6():
-    Eroe = pygame.image.load("img/eroe.png")
+    Eroe = pygame.image.load(os.path.join(filepath,"img/eroe.png"))
     EROE = pygame.transform.scale(Eroe,(60, 55))
     velocita = 2.5
     v = 0
@@ -1087,7 +1089,7 @@ def livello_6():
     build()
     all_sprites_list.add(player)
     
-    game_over = pygame.mixer.Sound("img/Game Over.wav")
+    game_over = pygame.mixer.Sound(os.path.join(filepath,"img/Game Over.wav"))
     font = pygame.font.SysFont("brittanic", 25)
     font1 = pygame.font.SysFont("brittanic", 30)
     font2 = pygame.font.SysFont("brittanic", 40)
