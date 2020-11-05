@@ -4,4 +4,4 @@ Questo è il gioco creato, durante le vacanze estive, da Rodolfi S. & Zhan S. de
 
 ## Descrizione 
 
-__ Un ELETTRIZZANTE gioco ORIGINALE, fondato su una scelta inziale che determina il __
+__Un ELETTRIZZANTE gioco ORIGINALE, fondato su una scelta inziale che determina il__
