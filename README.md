@@ -16,9 +16,7 @@ __Un ELETTRIZZANTE gioco ORIGINALE__, fondato su una __scelta inziale__ che dete
    - Sparo:  https://ufile.io/jbxznwv5
    - Congratulazioni:  https://ufile.io/c1rioxke  
  - avviare il gioco usando il comando `python gioco.py`   
- 1. First list item
-   - First nested list item
-     - Second nested list item
+
 #### Controlli  
 
 __[W]__ su  
