@@ -9,7 +9,7 @@ __Un ELETTRIZZANTE gioco ORIGINALE__, fondato su una __scelta inziale__ che dete
 ## Come avviare il gioco
  
  - il gioco usa pyton 3.8.1.   
- - una libreria, pygame `pip install pygame` 
+ - una sua libreria, pygame `pip install pygame` 
  - scaricare audio ed inserire in cartella img    
    - Punch:  https://ufile.io/20h2m24r
    - Game Over:  https://ufile.io/l4ucvuzu
