@@ -21,8 +21,8 @@ __[tasti del mouse]__ spara
 <summary>
 <b>Soluzioni</b>
 </summary>
-<p> 1. La vera uscita è quella di destra          
-    2. C'è una scala nascosta che inizia dal bordo a sinistra      
+<p> 1. La vera uscita è quella di destra <br>         
+    2. C'è una scala nascosta che inizia dal bordo a sinistra <br>     
     3. Il percorso è specchiato, uguale a quello di sinistra, ma trasperente. Ricorda di fare un bel salto lungo alla fine</p>     
 <i> Tutti i livelli sono possibili e stati testati</i>  
 </details>
