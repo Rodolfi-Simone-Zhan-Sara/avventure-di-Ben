@@ -7,12 +7,14 @@ Questo è il gioco creato, durante le vacanze estive, da __Rodolfi S. & Zhan S._
 __Un ELETTRIZZANTE gioco ORIGINALE__, fondato su una __scelta inziale__ che determinerà il tuo cammino, tra una strada piena d'insidie e una che metterà alla prova i tuoi riflessi
 
 #### Controlli
-```
-__[W]__ salta/su  
+
+__[W]__ su  
 __[S]__ giù  
-__[A]__ indietro  
-__[D]__ avanti
-```
+__[A]__ sinistra 
+__[D]__ destra
+__[spazio]__ salta
+__[tasto del mouse]__ spara
+
 
 
 <details>
