@@ -10,26 +10,31 @@ __Un ELETTRIZZANTE gioco ORIGINALE__, fondato su una __scelta inziale__ che dete
 
 
 
-{
-    "name": "Soluzioni"
-    "keywords": [
-        "menu",
-        "reveal",
-        "animation"
-    ],
-    "version": "0.11.1",
-    "author": {
-        "name": "Ivan Prignano",
-    },
-    "licenses": [
-        {
-            "type": "MIT",
-            "url": "https://github.com/iprignano/tendina#license"
-        }
-    ],
-    "homepage": "https://github.com/iprignano/tendina",
-    "docs": "https://github.com/iprignano/tendina#usage",
-    "dependencies": {
-        "jquery": ">=1.5"
-    }
-}
+<ul id="menu">
+  <li>
+    <a href="#">Menu 1</a>
+    <ul>
+      <li><a href="#">Submenu 1</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="#">Menu 2</a>
+    <ul>
+      <li><a href="#">Submenu 2</a></li>
+      <li><a href="#">Submenu 2</a></li>
+      <li><a href="#">Submenu 2</a>
+        <ul>
+          <li><a href="#">Subsubmenu 2</a></li>
+          <li><a href="#">Subsubmenu 2</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="#">Menu 3</a>
+    <ul>
+      <li><a href="#">Submenu 3</a></li>
+      <li><a href="#">Submenu 3</a></li>
+    </ul>
+  </li>
+</ul>
