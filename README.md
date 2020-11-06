@@ -12,7 +12,7 @@ __Un ELETTRIZZANTE gioco ORIGINALE__, fondato su una __scelta inziale__ che dete
 
 <details>
 <summary>
-<font size="1">Soluzioni</font>
+#<p>Soluzioni</p>
 </summary>
 <p>Hey Hey</p>
 </details>
