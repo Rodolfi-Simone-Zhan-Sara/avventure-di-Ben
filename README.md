@@ -12,8 +12,6 @@ __Un ELETTRIZZANTE gioco ORIGINALE__, fondato su una __scelta inziale__ che dete
 <details>
 <summary>
 <i>Soluzioni</i>
-Useful Source</a>
 </summary>
-<p>It's because the details block is html5. If you want to modify it your best bet is using html5. </p>
 </details>
 
