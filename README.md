@@ -40,5 +40,5 @@ __[tasti del mouse]__ spara
 
 # <p align=center>Thank for playing! </p>
      
-<img align=center src="https://media.giphy.com/media/3oriOfmIO7XHzKVeEw/giphy.gif" width="100" height="100"/>
+<img src="https://media.giphy.com/media/3oriOfmIO7XHzKVeEw/giphy.gif" align=center width="100" height="100"/>
 
