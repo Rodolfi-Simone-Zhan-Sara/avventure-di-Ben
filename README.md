@@ -8,12 +8,12 @@ __Un ELETTRIZZANTE gioco ORIGINALE__, fondato su una __scelta inziale__ che dete
 
 ##Come avviare il gioco
  
- -il gioco usa pyton 3.8.1.
- -una libreria, pygame 'pip install pygame'
- -scaricare audio 
-    1.aaa
- -avviare il gioco usando il comando 'python gioco.py'
-#### Controlli
+ -il gioco usa pyton 3.8.1.   
+ -una libreria, pygame 'pip install pygame'  
+ -scaricare audio   
+    1.aaa 
+ -avviare il gioco usando il comando 'python gioco.py'   
+#### Controlli  
 
 __[W]__ su  
 __[S]__ giù  
