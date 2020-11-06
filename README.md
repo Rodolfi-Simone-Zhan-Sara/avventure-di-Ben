@@ -8,21 +8,10 @@ __Un ELETTRIZZANTE gioco ORIGINALE__, fondato su una __scelta inziale__ che dete
 
 >__Controlli__
 
-## collapsible markdown?
 
 <details>
 <summary>
-# CLICK ME
-</summary>
-<p>
-
-#### yes, even hidden code blocks!
-
-
-<details>
-<summary>
-<i>Like this? </i>
-<a href="http://www.ironspider.ca/format_text/fontstyles.htm">
+<i>Soluzioni</i>
 Useful Source</a>
 </summary>
 <p>It's because the details block is html5. If you want to modify it your best bet is using html5. </p>
