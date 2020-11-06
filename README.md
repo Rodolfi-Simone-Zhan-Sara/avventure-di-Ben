@@ -8,17 +8,14 @@ __Un ELETTRIZZANTE gioco ORIGINALE__, fondato su una __scelta inziale__ che dete
 
 ##Come avviare il gioco
  
- -il gioco usa pyton 3.8.1.   
- -una libreria, pygame 'pip install pygame'  
- -scaricare audio   
- 1. First list item
-   - First nested list item
-     - Second nested list item
-  -Punch:  https://ufile.io/20h2m24r
-  -Game Over:  https://ufile.io/l4ucvuzu
-  -Sparo:  https://ufile.io/jbxznwv5
-  -Congratulazioni:  https://ufile.io/c1rioxke  
- -avviare il gioco usando il comando 'python gioco.py'   
+ - il gioco usa pyton 3.8.1.   
+ - una libreria, pygame 'pip install pygame'  
+ - scaricare audio   
+  - Punch:  https://ufile.io/20h2m24r
+  - Game Over:  https://ufile.io/l4ucvuzu
+  - Sparo:  https://ufile.io/jbxznwv5
+  - Congratulazioni:  https://ufile.io/c1rioxke  
+ - avviare il gioco usando il comando 'python gioco.py'   
 #### Controlli  
 
 __[W]__ su  
