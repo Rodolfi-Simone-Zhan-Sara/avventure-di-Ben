@@ -1,7 +1,7 @@
 # Avventure di Ben
 
 Questo è il gioco creato, durante le vacanze estive, da Rodolfi S. & Zhan S. della classe II F
- <font style="color:red"> This is my text verdana</font>
+ <font style="color:#ff0000;"> This is my text verdana</font>
 
 ## Descrizione 
 
