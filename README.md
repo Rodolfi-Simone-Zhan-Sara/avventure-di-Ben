@@ -38,5 +38,5 @@ __[tasti del mouse]__ spara
 <i> Tutti i livelli sono possibili e stati testati!!!</i>  
 </details>
 
-Thank for playing! ![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
+Thank for playing! ![](https://media.giphy.com/media/3oriOfmIO7XHzKVeEw/giphy.gif)
 
