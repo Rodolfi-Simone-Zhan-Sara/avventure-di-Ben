@@ -9,9 +9,9 @@ __Un ELETTRIZZANTE gioco ORIGINALE__, fondato su una __scelta inziale__ che dete
 #### Controlli
 
 __[W]__ salta/su
-__[S]__ giù
-__[A]__ indietro  
-__[D]__ avanti
+ __[S]__ giù
+ __[A]__ indietro  
+ __[D]__ avanti
 
 
 <details>
