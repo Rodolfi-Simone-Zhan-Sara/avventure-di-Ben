@@ -30,7 +30,7 @@ __[tasti del mouse]__ spara
 
 <details>
 <summary>
- <H2>Soluzioni</H2>
+ <b>Soluzioni</b>
 </summary>
 <p> 1. La vera uscita è quella di destra <br>         
     2. C'è una scala nascosta che inizia dal bordo a sinistra <br>     
