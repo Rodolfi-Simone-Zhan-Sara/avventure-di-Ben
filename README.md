@@ -13,7 +13,7 @@ __[S]__ giù
 __[A]__ sinistra    
 __[D]__ destra    
 __[spazio]__ salta    
-__[tasto del mouse]__ spara   
+__[tasti del mouse]__ spara   
 
 
 
