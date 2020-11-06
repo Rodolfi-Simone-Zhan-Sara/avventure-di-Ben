@@ -16,7 +16,7 @@ __[D]__ avanti
 
 <details>
 <summary>
-<font face="Times New Roman" size="1" color="#111111">Soluzioni</font>
+<b>Soluzioni</b>
 </summary>
 <p>Hey Hey</p>
 </details>
