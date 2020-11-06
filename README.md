@@ -12,7 +12,6 @@ __Un ELETTRIZZANTE gioco ORIGINALE__, fondato su una __scelta inziale__ che dete
 
 <details>
 <summary>
-
 # CLICK ME
 </summary>
 <p>
