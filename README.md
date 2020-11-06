@@ -38,3 +38,4 @@ __[tasti del mouse]__ spara
 <i> Tutti i livelli sono possibili e stati testati!!!</i>  
 </details>
 
+Thank for playing! 👋
