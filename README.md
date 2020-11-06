@@ -8,33 +8,16 @@ __Un ELETTRIZZANTE gioco ORIGINALE__, fondato su una __scelta inziale__ che dete
 
 >__Controlli__
 
+## collapsible markdown?
 
+<details>
+<summary>
 
-<ul id="menu">
-  <li>
-    <a href="#">Menu 1</a>
-    <ul>
-      <li><a href="#">Submenu 1</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="#">Menu 2</a>
-    <ul>
-      <li><a href="#">Submenu 2</a></li>
-      <li><a href="#">Submenu 2</a></li>
-      <li><a href="#">Submenu 2</a>
-        <ul>
-          <li><a href="#">Subsubmenu 2</a></li>
-          <li><a href="#">Subsubmenu 2</a></li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <a href="#">Menu 3</a>
-    <ul>
-      <li><a href="#">Submenu 3</a></li>
-      <li><a href="#">Submenu 3</a></li>
-    </ul>
-  </li>
-</ul>
+# CLICK ME
+</summary>
+<p>
+
+#### yes, even hidden code blocks!
+
+```python
+print("hello world!")
