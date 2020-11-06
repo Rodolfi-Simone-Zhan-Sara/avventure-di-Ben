@@ -6,15 +6,13 @@ Questo è il gioco creato, durante le vacanze estive, da __Rodolfi S. & Zhan S._
 
 __Un ELETTRIZZANTE gioco ORIGINALE__, fondato su una __scelta inziale__ che determinerà il tuo cammino, tra una strada piena d'insidie e una che metterà alla prova i tuoi riflessi
 
-> __Controlli__
-
-__[W]__ avanti
+>__Controlli__
 
 
 
 <details>
 <summary>
-<stong>Soluzioni</strong>
+<font face="Times New Roman" size="1" color="#000000">Soluzioni</font>
 </summary>
 <p>Hey Hey</p>
 </details>
