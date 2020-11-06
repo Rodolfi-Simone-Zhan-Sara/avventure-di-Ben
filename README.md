@@ -10,7 +10,7 @@ __Un ELETTRIZZANTE gioco ORIGINALE__, fondato su una __scelta inziale__ che dete
 
 __[W]__ su  
 __[S]__ giù  
-__[A]__ sinistra 
+__[A]__ sinistra    
 __[D]__ destra    
 __[spazio]__ salta    
 __[tasto del mouse]__ spara   
