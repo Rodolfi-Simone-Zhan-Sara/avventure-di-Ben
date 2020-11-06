@@ -1,7 +1,7 @@
 # Avventure di Ben
 
 Questo è il gioco creato, durante le vacanze estive, da Rodolfi S. & Zhan S. della classe II F
-<p style="color:red">This is a paragraph.</p>
+<p style="color:#ff0000">This is a paragraph.</p>
 
 ## Descrizione 
 
