@@ -30,7 +30,7 @@ __[tasti del mouse]__ spara
 
 <details>
 <summary>
- <b>Soluzioni</b>
+ <b>Soluzioni (prima provaci)</b>
 </summary>
 <p> 1. La vera uscita è quella di destra <br>         
     2. C'è una scala nascosta che inizia dal bordo a sinistra <br>     
@@ -38,7 +38,8 @@ __[tasti del mouse]__ spara
 <i> Tutti i livelli sono possibili e stati testati!!!</i>  
 </details>
 
-# <p align=center>Thank for playing! (✧∇✧)╯ </p>
+# <p align=center>Thank for playing!(✧∇✧)╯
+٩( 'ω' )و </p>
      
 <img src="https://media.giphy.com/media/3oriOfmIO7XHzKVeEw/giphy.gif" align=center width="240" height="160"/>
 
