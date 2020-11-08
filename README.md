@@ -19,7 +19,7 @@ __Un ELETTRIZZANTE gioco ORIGINALE__, fondato su una __scelta inziale__ che dete
 
 ### Controlli  
 
-__[W]__ su  🇸🇿🇸🇷
+__[W]__ su        
 __[S]__ giù  
 __[A]__ sinistra    
 __[D]__ destra    
