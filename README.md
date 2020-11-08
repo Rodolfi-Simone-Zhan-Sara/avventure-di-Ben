@@ -1,4 +1,4 @@
-# Avventure di Ben
+# Avventure di Ben🕹️
 
 ❤️Questo è il gioco creato, durante le vacanze estive, da __Rodolfi S. & Zhan S.__ della classe II F
 
@@ -10,14 +10,14 @@ __Un ELETTRIZZANTE gioco ORIGINALE__, fondato su una __scelta inziale__ che dete
  
  - il gioco usa pyton 3.8.1.   
  - una sua libreria, pygame `pip install pygame` 
- - scaricare audio🎵 ed inserire in cartella img    
+ - scaricare audio🎵 ed inserire nella cartella img    
    - Punch:  https://ufile.io/20h2m24r
    - Game Over:  https://ufile.io/l4ucvuzu
    - Sparo:  https://ufile.io/jbxznwv5
    - Congratulazioni:  https://ufile.io/c1rioxke  
  - avviare il gioco usando il comando `python gioco.py`   
 
-#### Controlli  
+### Controlli  
 
 __[W]__ su  
 __[S]__ giù  
@@ -38,7 +38,7 @@ __[tasti del mouse]__ spara
 <i> Tutti i livelli sono possibili e stati testati!!!</i>  
 </details>
 
-# <p align=center>Thank for playing! </p>
+# <p align=center>Thank for playing! (✧∇✧)╯ </p>
      
 <img src="https://media.giphy.com/media/3oriOfmIO7XHzKVeEw/giphy.gif" align=center width="240" height="160"/>
 
