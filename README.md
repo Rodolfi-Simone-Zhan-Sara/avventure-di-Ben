@@ -39,8 +39,7 @@ __[tasti del mouse]__ spara
 </details>
 
 # <p align=center>Thank for playing! ╰( 'ω' )╯ </p>
-ヽ(￣ω￣〃)ゝ       
-(┌・ω・)┌✧     
+(◍•͈⌔•͈◍)     
 (๑•₃•๑)     
 ╰(✧∇✧)̣╯     
 
