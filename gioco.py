@@ -1110,9 +1110,9 @@ def livello_6():
 
         if alive:
             m += 1
-            if m ==3000:
-                if spawn > 7:
-                    spawn -= 2
+            if m ==1500:
+                if spawn > 6:
+                    spawn -= 1
                 m= 0
 
 
@@ -1167,7 +1167,7 @@ def livello_6():
                 morte_list = pygame.sprite.Group()
 
                 alive = False
-                velocita = 2
+                velocita = 2.5
                 v = 0
                 m = 0
                 spawn = 15
@@ -1225,4 +1225,4 @@ def livello_6():
         clock.tick(60)
 
 
-menu(SFONDO, screen, livello_1, livello_4, congratulazioni)
+menu(SFONDO, screen, livello_1, livello_6, congratulazioni)
