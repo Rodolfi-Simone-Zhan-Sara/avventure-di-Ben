@@ -38,5 +38,5 @@ __[tasti del mouse]__ spara
 <i> Tutti i livelli sono possibili e stati testati!!!</i>  
 </details>
 
-# <p align=center>Thank for playing!(✧∇✧)╯</p>
+# <p align=center>Thank for playing! ٩( 'ω' )و</p>
 
