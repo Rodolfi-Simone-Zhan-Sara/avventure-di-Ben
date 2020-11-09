@@ -39,6 +39,4 @@ __[tasti del mouse]__ spara
 </details>
 
 # <p align=center>Thank for playing!(✧∇✧)╯</p>
-     
-<img src="https://media.giphy.com/media/3oriOfmIO7XHzKVeEw/giphy.gif" align=center width="240" height="160"/>
 
