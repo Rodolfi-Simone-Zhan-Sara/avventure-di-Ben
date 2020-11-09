@@ -37,14 +37,16 @@ def menu(SFONDO, screen, livello_1, livello_4, congratulazioni):
     
     while True:
         pygame.display.update()
+
         if len(congratulazioni) == 1 :
             c += 1
-            pygame.draw.rect(screen, (GOLD), (750, 97, 150, 80))
-            screen.blit(testo7, (760, 105))
-            screen.blit(testo8, (765, 130))
-            screen.blit(testo9, (770, 155))
 
             if c == 100:
+                pygame.draw.rect(screen, (GOLD), (750, 97, 150, 80))
+                screen.blit(testo7, (760, 105))
+                screen.blit(testo8, (765, 130))
+                screen.blit(testo9, (770, 155))
+
                 congratulazioni.append("winner")
                 notifica.play ()
 
@@ -53,9 +55,9 @@ def menu(SFONDO, screen, livello_1, livello_4, congratulazioni):
 
         if len(congratulazioni) == 2:
             c += 1
-            if c == 1000:
+            if c == 3000:
                 congratulazioni.append("troll") 
-        
+  
         pygame.draw.rect(screen, (WHITE),(247, 97, 404, 100))
         pulsante_azione = pygame.draw.rect(screen, (WHITE),(100, 450, 250, 200))
         pulsante_abilita = pygame.draw.rect(screen, (WHITE),(550, 450, 250, 200))
