@@ -1225,4 +1225,4 @@ def livello_6():
         clock.tick(60)
 
 
-menu(SFONDO, screen, livello_1, livello_6, congratulazioni)
+menu(SFONDO, screen, livello_1, livello_4, congratulazioni)
