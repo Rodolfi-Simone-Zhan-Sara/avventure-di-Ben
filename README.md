@@ -4,8 +4,8 @@
 
 ## Descrizione 
 
-__Un ELETTRIZZANTE gioco ORIGINALE__, fondato su una __scelta inziale__ che determinerà il tuo cammino, tra una strada piena d'insidie e una che metterà alla prova i tuoi riflessi    
-_Ti ricordo: che puoi vedere il titolo del livello e il punteggio nella finestra del gioco_
+__Un ELETTRIZZANTE gioco ORIGINALE__, fondato su una __scelta inziale__ che determinerà il tuo cammino, tra una strada piena d'insidie e una che metterà alla prova i tuoi riflessi.     
+_Ti ricordo: che puoi vedere il titolo del livello e il punteggio nella finestra del gioco._
 
 ## Come avviare il gioco
  
