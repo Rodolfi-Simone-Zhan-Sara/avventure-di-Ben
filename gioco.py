@@ -751,7 +751,7 @@ def livello_4():
 
     crash = pygame.mixer.Sound(os.path.join(filepath,"img/Punch.wav"))
     font = pygame.font.SysFont("brittanic", 25)
-    testo = font.render("Prendi 30 blocchi prima che cadano, ma stai attento a quelli ROSSI!!", True, BLACK)
+    testo = font.render("Prendi 30 blocchi neri prima che cadano, ma stai attento a quelli ROSSI!!", True, BLACK)
 
     player.rect.y = 630
 
@@ -782,7 +782,7 @@ def livello_4():
             block_list.add(block)
             all_sprites_list.add(block)
 
-        n = random.randrange(90)
+        n = random.randrange(80)
 
         if n == 1:
             morte = Block2(RED)
@@ -877,7 +877,7 @@ def livello_5():
 
     for i in range(50):
         block = Block(BLACK)
-        block.rect.x = random.randrange(890)
+        block.rect.x = random.randrange(20,871)
         block.rect.y = random.randrange(50, 600)
         block_list.add(block)
         all_sprites_list.add(block)
