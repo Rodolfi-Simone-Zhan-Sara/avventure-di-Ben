@@ -11,11 +11,6 @@ _Ti ricordo: che puoi vedere il titolo del livello e il punteggio nella finestra
  
  - il gioco usa pyton 3.8.1.   
  - una sua libreria, pygame `pip install pygame` 
- - scaricare audio🎵 ed inserire nella cartella img📁   
-   - Punch:  https://ufile.io/20h2m24r
-   - Game Over:  https://ufile.io/l4ucvuzu
-   - Sparo:  https://ufile.io/jbxznwv5
-   - Congratulazioni:  https://ufile.io/c1rioxke  
  - avviare il gioco usando il comando `python gioco.py`   
 
 ### Controlli  
